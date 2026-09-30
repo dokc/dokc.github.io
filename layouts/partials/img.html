@@ -1,0 +1,29 @@
+{{- /* Responsive image from a Hugo resource.
+Args: dict "src" (resource) "alt" "class" "width" (max px, default 1200) "sizes" "fill" (e.g. "800x450") "eager" */ -}}
+{{- with .src -}}
+{{- $max := $.width | default 1200 -}}
+{{- $loading := cond (eq $.eager true) "eager" "lazy" -}}
+{{- if in (slice "image/png" "image/jpeg" "image/webp") .MediaType.Type -}}
+  {{- $base := . -}}
+  {{- if $.fill }}{{ $base = .Fill (printf "%s Center" $.fill) }}{{ end -}}
+  {{- if lt $base.Width 800 -}}
+    {{- /* Small images (screenshots, covers) are served as-is: resizing them only loses sharpness. */ -}}
+<img src="{{ $base.RelPermalink }}" width="{{ $base.Width }}" height="{{ $base.Height }}" alt="{{ $.alt }}" class="{{ $.class }}" loading="{{ $loading }}" decoding="async">
+  {{- else -}}
+  {{- $widths := slice -}}
+  {{- range slice 400 800 1200 1600 2400 }}{{ if and (le . $max) (lt . $base.Width) }}{{ $widths = $widths | append . }}{{ end }}{{ end -}}
+  {{- $srcset := slice -}}
+  {{- $last := "" -}}
+  {{- range $widths }}
+    {{- $last = $base.Resize (printf "%dx webp q80" .) -}}
+    {{- $srcset = $srcset | append (printf "%s %dw" $last.RelPermalink .) -}}
+  {{- end -}}
+  {{- /* The original is the highest-resolution candidate, for high-DPI screens. */ -}}
+  {{- $srcset = $srcset | append (printf "%s %dw" $base.RelPermalink $base.Width) -}}
+  {{- if not $last }}{{ $last = $base }}{{ end -}}
+<img src="{{ $last.RelPermalink }}" srcset="{{ delimit $srcset ", " }}" sizes="{{ $.sizes | default "100vw" }}" width="{{ $last.Width }}" height="{{ $last.Height }}" alt="{{ $.alt }}" class="{{ $.class }}" loading="{{ $loading }}" decoding="async">
+  {{- end -}}
+{{- else -}}
+<img src="{{ .RelPermalink }}" alt="{{ $.alt }}" class="{{ $.class }}" loading="{{ $loading }}" decoding="async">
+{{- end -}}
+{{- end -}}

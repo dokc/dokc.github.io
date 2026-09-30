@@ -1,0 +1,13 @@
+{{- /* Page intro. Args: dict "page" "label" (optional) "title" (optional) "lead" (optional) */ -}}
+{{- $p := .page -}}
+<section class="border-b border-line">
+  <div class="container-dok py-14 lg:py-20">
+    {{- with .label | default $p.Params.label }}
+    <p class="label mb-4">{{ . }}</p>
+    {{- end }}
+    <h1 class="text-title max-w-4xl">{{ .title | default $p.Title }}</h1>
+    {{- with .lead | default $p.Params.lead }}
+    <p class="text-lead mt-6 max-w-3xl">{{ . | markdownify }}</p>
+    {{- end }}
+  </div>
+</section>

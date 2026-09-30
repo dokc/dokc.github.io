@@ -1,0 +1,20 @@
+{{ define "main" }}
+{{- $type := .Params.resourceType | default "article" }}
+<section class="border-b border-line">
+  <div class="container-dok py-14 lg:py-20">
+    <div class="mx-auto flex max-w-3xl flex-col gap-6">
+      <div class="flex items-center gap-4">
+        {{ partial "heptagon.html" (dict "type" $type "size" 48 "class" "text-violet") }}
+        <p class="label">{{ i18n (printf "resourceType_%s" $type) | default $type }}</p>
+      </div>
+      <h1 class="text-title">{{ .Title }}</h1>
+      {{- with .Params.credit }}<p class="font-mono text-base text-muted">{{ . }}</p>{{ end }}
+      {{- with .Description }}<p class="text-lead">{{ . }}</p>{{ end }}
+      {{- with .Params.link }}<div>{{ partial "button.html" (dict "label" (i18n "openResource") "url" .) }}</div>{{ end }}
+    </div>
+  </div>
+</section>
+{{- with .Content }}
+<div class="container-dok py-14 lg:py-20"><div class="prose mx-auto">{{ . }}</div></div>
+{{- end }}
+{{ end }}

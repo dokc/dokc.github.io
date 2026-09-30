@@ -1,0 +1,4 @@
+{{- /* Pill button. Args: dict "label" "url" "style" (primary|outline|dark) "class" */ -}}
+{{- $url := partial "link-url.html" .url -}}
+{{- $styles := dict "primary" "btn-primary" "outline" "btn-outline" "dark" "btn-dark" -}}
+<a class="btn {{ index $styles (.style | default "primary") }} {{ .class }}" href="{{ $url }}"{{ if hasPrefix $url "http" }} target="_blank" rel="noopener"{{ end }}>{{ .label }}</a>

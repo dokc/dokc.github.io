@@ -1,0 +1,8 @@
+{{- /* Menu link; external URLs open in a new tab. Args: dict "entry" "class" "page" */ -}}
+{{- $url := .entry.URL -}}
+{{- $external := hasPrefix $url "http" -}}
+{{- $current := and .page (.page.IsMenuCurrent .entry.Menu .entry) -}}
+<a href="{{ $url }}" class="{{ .class }}"{{ if $current }} aria-current="page"{{ end }}{{ if $external }} target="_blank" rel="noopener"{{ end }}>
+  {{- .entry.Name -}}
+  {{- if $external }}<svg class="ml-1 inline-block h-3 w-3 align-baseline opacity-70" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M11 3h6v6h-2V6.41l-6.29 6.3-1.42-1.42L13.59 5H11V3z"/><path d="M5 5h4v2H5v8h8v-4h2v6H3V5h2z"/></svg><span class="sr-only"> ({{ i18n "opensInNewTab" }})</span>{{ end -}}
+</a>

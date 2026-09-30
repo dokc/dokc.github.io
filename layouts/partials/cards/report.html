@@ -1,0 +1,10 @@
+{{- /* Report card. Context: page */ -}}
+{{- $cover := "" -}}
+{{- with .Params.cover }}{{ $cover = $.Resources.Get . }}{{ end -}}
+<a href="{{ .RelPermalink }}" class="card group flex h-full flex-col gap-5">
+  {{- if $cover }}
+  {{ partial "img.html" (dict "src" $cover "alt" (printf "%s cover" .Title) "width" 800 "sizes" "(min-width: 1024px) 380px, 100vw" "class" "w-full rounded-2xl shadow-2xl") }}
+  {{- end }}
+  <p class="label">{{ .Date.Year }}</p>
+  <h3 class="text-xl leading-snug font-extrabold text-paper group-hover:text-teal">{{ .Title }}</h3>
+</a>

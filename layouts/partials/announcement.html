@@ -1,0 +1,13 @@
+{{- with site.Params.announcement -}}
+{{- if .text -}}
+<div class="bg-teal text-deep-sea">
+  <div class="container-dok flex flex-wrap items-center justify-center gap-x-4 gap-y-1 py-2 text-center text-base font-semibold">
+    <span>{{ .text | markdownify }}</span>
+    {{- with .url }}
+    {{- $u := partial "link-url.html" . }}
+    <a href="{{ $u }}" class="font-extrabold text-deep-sea underline underline-offset-4 hover:text-deep-sea"{{ if hasPrefix $u "http" }} target="_blank" rel="noopener"{{ end }}>{{ i18n "learnMore" }}</a>
+    {{- end }}
+  </div>
+</div>
+{{- end -}}
+{{- end -}}

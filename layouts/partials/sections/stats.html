@@ -1,0 +1,16 @@
+{{- /* Stats row. Fields: label, title, intro, items[]: value, label; buttons[] */ -}}
+{{- $s := .s -}}
+<section class="py-14 lg:py-20">
+  <div class="container-dok">
+    {{ partial "section-heading.html" (dict "page" .page "s" $s "center" true) }}
+    <dl class="grid gap-4 sm:grid-cols-3">
+      {{- range $s.items }}
+      <div class="card flex flex-col-reverse gap-2 text-center">
+        <dt class="text-lg text-mist">{{ .label }}</dt>
+        <dd class="text-[clamp(2.5rem,5vw,3.5rem)] font-extrabold leading-none tracking-[-0.04em] text-teal">{{ .value }}</dd>
+      </div>
+      {{- end }}
+    </dl>
+    {{ partial "buttons.html" (dict "buttons" $s.buttons "class" "mt-10 justify-center") }}
+  </div>
+</section>

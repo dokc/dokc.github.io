@@ -1,0 +1,10 @@
+{{ define "main" }}
+{{ partial "page-header.html" (dict "page" . "label" (i18n .Data.Plural)) }}
+<div class="container-dok py-14 lg:py-20">
+  {{- $pag := .Paginate .Pages }}
+  <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+    {{- range $pag.Pages }}{{ partial "cards/post.html" . }}{{ end }}
+  </div>
+  {{ partial "pagination.html" . }}
+</div>
+{{ end }}

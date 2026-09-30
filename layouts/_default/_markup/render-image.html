@@ -1,0 +1,11 @@
+{{- /* Markdown images: bundle resources get resized to WebP; remote images pass through. */ -}}
+{{- $u := urls.Parse .Destination -}}
+{{- $r := "" -}}
+{{- if not $u.IsAbs }}{{ $r = .Page.Resources.Get $u.Path }}{{ end -}}
+{{- if $r -}}
+  {{- $img := partial "img.html" (dict "src" $r "alt" .PlainText "width" 1600 "sizes" "(min-width: 1024px) 768px, 100vw") -}}
+  {{- if .Title }}<figure>{{ $img }}<figcaption>{{ .Title }}</figcaption></figure>{{ else }}{{ $img }}{{ end -}}
+{{- else -}}
+  {{- if not $u.IsAbs }}{{ warnf "%s: image %q not found in page bundle" .Page.File.Path .Destination }}{{ end -}}
+<img src="{{ .Destination | safeURL }}" alt="{{ .PlainText }}"{{ with .Title }} title="{{ . }}"{{ end }} loading="lazy" decoding="async">
+{{- end -}}

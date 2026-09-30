@@ -1,0 +1,8 @@
+{{- /* Renders a list of buttons from content. Args: dict "buttons" (list of {label,url,style}) "class" */ -}}
+{{- with .buttons -}}
+<div class="flex flex-wrap gap-3 {{ $.class }}">
+  {{- range $i, $b := . -}}
+    {{- partial "button.html" (dict "label" $b.label "url" $b.url "style" ($b.style | default (cond (eq $i 0) "primary" "outline"))) -}}
+  {{- end -}}
+</div>
+{{- end -}}

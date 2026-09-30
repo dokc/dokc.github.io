@@ -1,0 +1,13 @@
+{{- /* Text block. Fields: label, title, content (md), width (narrow|wide), align (left|center), tone (panel), buttons[] */ -}}
+{{- $s := .s -}}
+{{- $center := eq $s.align "center" -}}
+<section class="py-14 lg:py-20 {{ if eq $s.tone "panel" }}tone-panel{{ end }}">
+  <div class="container-dok {{ if $center }}text-center{{ end }}">
+    <div class="{{ if eq $s.width "wide" }}{{ else }}mx-auto max-w-3xl{{ end }}">
+      {{- with $s.label }}<p class="label mb-3">{{ . }}</p>{{ end }}
+      {{- with $s.title }}<h2 class="text-title mb-6">{{ . }}</h2>{{ end }}
+      <div class="prose {{ if or $center (eq $s.width "wide") }}prose-wide{{ end }}">{{ partial "md.html" (dict "page" .page "text" $s.content) }}</div>
+      {{ partial "buttons.html" (dict "buttons" $s.buttons "class" (cond $center "mt-8 justify-center" "mt-8")) }}
+    </div>
+  </div>
+</section>

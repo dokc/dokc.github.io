@@ -1,0 +1,26 @@
+{{ define "main" }}
+{{- $cover := "" }}{{ with .Params.cover }}{{ $cover = $.Resources.Get . }}{{ end }}
+{{- $pdf := "" }}{{ with .Params.pdf }}{{ $pdf = $.Resources.Get . }}{{ end }}
+<section class="hero-sky border-b border-line">
+  <div class="container-dok grid items-center gap-12 py-14 lg:grid-cols-[3fr_2fr] lg:py-20">
+    <div>
+      <p class="label mb-4">{{ i18n "reports" }} · {{ .Date.Year }}</p>
+      <h1 class="text-title">{{ .Title }}</h1>
+      {{- with .Description }}<p class="text-lead mt-6">{{ . }}</p>{{ end }}
+      {{- with $pdf }}<div class="mt-8">{{ partial "button.html" (dict "label" (i18n "downloadReport") "url" .RelPermalink) }}</div>{{ end }}
+    </div>
+    {{- with $cover }}
+    <div>{{ partial "img.html" (dict "src" . "alt" (printf "%s cover" $.Title) "width" 1200 "sizes" "(min-width: 1024px) 480px, 100vw" "class" "mx-auto w-full max-w-md rounded-2xl shadow-2xl" "eager" true) }}</div>
+    {{- end }}
+  </div>
+</section>
+{{- with .Content }}
+<div class="container-dok py-14 lg:py-20">
+  <div class="prose mx-auto">{{ . }}</div>
+</div>
+{{- end }}
+<div class="container-dok">
+  <div class="card mx-auto max-w-3xl lg:p-10">{{ partial "newsletter.html" (dict "id" "report-newsletter") }}</div>
+</div>
+{{ partial "sections.html" . }}
+{{ end }}

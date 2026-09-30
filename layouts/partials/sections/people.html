@@ -1,0 +1,43 @@
+{{- /* People grid (ambassadors, staff, speakers).
+Fields: label, title, intro, people[]: name, role, image (bundle file), bio, links{linkedin,x,website} */ -}}
+{{- $s := .s -}}
+{{- $page := .page -}}
+<section class="py-14 lg:py-20">
+  <div class="container-dok">
+    {{ partial "section-heading.html" (dict "page" $page "s" $s) }}
+    <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {{- range $s.people }}
+      {{- $img := partial "resolve-image.html" (dict "page" $page "path" .image) }}
+      <li class="card flex flex-col gap-4">
+        <div class="flex items-center gap-4">
+          {{- if $img }}
+          {{ partial "img.html" (dict "src" $img "alt" .name "fill" "240x240" "width" 240 "sizes" "96px" "class" "h-20 w-20 shrink-0 rounded-full object-cover ring-2 ring-teal") }}
+          {{- else }}
+          <div class="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-deep-sea ring-2 ring-line" aria-hidden="true">{{ partial "mark.html" (dict "size" 36) }}</div>
+          {{- end }}
+          <div>
+            <h3 class="text-lg leading-snug font-extrabold">{{ .name }}</h3>
+            {{- with .role }}<p class="text-base text-mist">{{ . }}</p>{{ end }}
+          </div>
+        </div>
+        {{- with .links }}
+        <ul class="flex flex-wrap gap-x-4 gap-y-1">
+          {{- $links := . }}
+          {{- range $k := slice "linkedin" "x" "website" }}
+          {{- with index $links $k }}
+          <li><a href="{{ . }}" class="label hover:text-paper" target="_blank" rel="noopener">{{ i18n $k }}</a></li>
+          {{- end }}
+          {{- end }}
+        </ul>
+        {{- end }}
+        {{- with .bio }}
+        <details class="group mt-auto">
+          <summary class="cursor-pointer list-none text-base font-bold text-teal hover:text-paper">{{ i18n "readBio" }} <span class="inline-block transition-transform group-open:rotate-90" aria-hidden="true">&rsaquo;</span></summary>
+          <p class="mt-3 text-base text-mist">{{ . }}</p>
+        </details>
+        {{- end }}
+      </li>
+      {{- end }}
+    </ul>
+  </div>
+</section>

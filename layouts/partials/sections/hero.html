@@ -1,0 +1,25 @@
+{{- /* Hero with the Orbit visual. Fields: label, title, text, buttons[], image (optional assets path; replaces the animated Orbit) */ -}}
+{{- $s := .s -}}
+{{- $img := partial "resolve-image.html" (dict "page" .page "path" $s.image) -}}
+<section class="relative overflow-hidden border-b border-line bg-deep-sea" data-hero>
+  <canvas class="pointer-events-none absolute inset-0 h-full w-full" data-stars aria-hidden="true"></canvas>
+  {{- if $img }}
+  <div class="hero-art relative aspect-[4/3] sm:aspect-[16/9] lg:absolute lg:inset-y-0 lg:right-0 lg:left-[36%] lg:flex lg:aspect-auto lg:items-center" aria-hidden="true">
+    {{ partial "img.html" (dict "src" $img "alt" "" "width" 2400 "sizes" "(min-width: 1024px) 64vw, 100vw" "class" "h-full w-full object-cover object-[70%_50%] lg:h-auto lg:object-contain" "eager" true) }}
+  </div>
+  {{- else }}
+  <div class="relative aspect-[4/3] sm:aspect-[16/9] lg:absolute lg:inset-y-0 lg:right-0 lg:left-[36%] lg:flex lg:aspect-auto lg:items-center">
+    {{ partial "orbit.html" . }}
+  </div>
+  {{- end }}
+  <div class="container-dok relative z-10 py-12 lg:py-36">
+    <div class="flex max-w-xl flex-col gap-6 lg:gap-7">
+      {{- with $s.label }}<p class="label">{{ . }}</p>{{ end }}
+      <h1 class="text-display">{{ $s.title }}</h1>
+      {{- with $s.text }}<p class="text-lead max-w-xl">{{ . }}</p>{{ end }}
+      {{ partial "buttons.html" (dict "buttons" $s.buttons "class" "mt-2") }}
+    </div>
+  </div>
+</section>
+{{- $js := resources.Get "js/hero.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>

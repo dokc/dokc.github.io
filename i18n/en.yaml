@@ -1,0 +1,65 @@
+# Interface strings. Page copy lives in content/*.md.
+home: Home
+skipToContent: Skip to content
+toggleNavigation: Toggle navigation
+mainNavigation: Main
+opensInNewTab: opens in a new tab
+learnMore: Learn more
+readMore: Read more
+footerExplore: Explore
+licenseNotice: Content distributed under
+social_slack: Slack
+social_meetup: Meetup
+social_youtube: YouTube
+social_github: GitHub
+
+newsletterTitle: Stay in the loop
+newsletterText: Event announcements, the annual DoK report and community news. No spam.
+newsletterPlaceholder: you@example.com
+newsletterButton: Subscribe
+
+by: By
+publishedOn: Published
+updatedOn: Updated
+categories: Categories
+tags: Tags
+allPosts: All posts
+newer: Newer
+older: Older
+pageOf: Page {{ .Current }} of {{ .Total }}
+
+upcomingEvents: Upcoming events
+pastEvents: Past events
+noUpcomingEvents: No upcoming events right now. Check back soon, or join the Slack to hear first.
+eventDate: Date
+eventLocation: Location
+eventType: Type
+register: Register
+eventType_dok-day: DoK Day
+eventType_town-hall: Town hall
+eventType_meetup: Meetup
+eventType_talk: DoK talk
+eventType_webinar: Webinar
+eventType_other: Event
+
+allTypes: All
+filterByType: Filter by type
+openResource: Open resource
+resourceType_article: Article
+resourceType_video: Video
+resourceType_podcast: Podcast
+resourceType_pdf: PDF
+resourceType_whitepaper: Whitepaper
+
+downloadReport: Download the report
+reports: Reports
+
+readBio: Read bio
+linkedin: LinkedIn
+x: X
+website: Website
+
+notFoundLabel: "404 · Not found"
+notFoundTitle: This page is not in our cluster.
+notFoundText: It may have moved when we rebuilt the site. Try the home page, the blog or the library.
+backHome: Back to home

@@ -1,0 +1,4 @@
+{{- /* DoK mark: K wedge + D half disc. Args: dict "k" (wedge fill) "d" (disc fill) "size" "class" */ -}}
+{{- $k := .k | default "#12DDB6" -}}
+{{- $d := .d | default "#F5F5F0" -}}
+<svg viewBox="0 0 250 250" width="{{ .size | default 48 }}" height="{{ .size | default 48 }}" class="{{ .class }}" aria-hidden="true" focusable="false"><path d="M0 0H125L10 125L125 250H0Z" fill="{{ $k }}"/><path d="M125 0A125 125 0 0 1 125 250Z" fill="{{ $d }}"/></svg>

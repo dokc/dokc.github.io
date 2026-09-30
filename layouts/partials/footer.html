@@ -1,0 +1,63 @@
+{{- $page := . -}}
+{{- $linkClass := "text-base font-medium text-mist hover:text-teal aria-[current=page]:text-teal" -}}
+<footer class="mt-24 border-t border-line">
+  <div class="container-dok py-14">
+    <div class="mb-14 rounded-card border border-line bg-panel p-6 lg:p-10">
+      {{ partial "newsletter.html" dict }}
+    </div>
+
+    <div class="grid gap-10 md:grid-cols-[1.4fr_repeat(3,1fr)]">
+      <div class="flex flex-col gap-5">
+        <a href="{{ "/" | relURL }}" class="text-paper hover:text-paper" aria-label="{{ site.Title }} – {{ i18n "home" }}">{{ partial "logo.html" (dict "size" "md") }}</a>
+        <p class="max-w-xs text-base text-mist">{{ site.Params.tagline }}</p>
+        <ul class="flex flex-wrap gap-x-5 gap-y-2">
+          {{- range $key := slice "slack" "meetup" "youtube" "github" }}
+          {{- with index site.Params.links $key }}
+          <li><a href="{{ . }}" class="label hover:text-paper" target="_blank" rel="noopener">{{ i18n (printf "social_%s" $key) }}</a></li>
+          {{- end }}
+          {{- end }}
+        </ul>
+      </div>
+
+      {{- $loose := slice }}
+      {{- range site.Menus.main }}
+        {{- if .HasChildren }}
+      <nav aria-label="{{ .Name }}">
+        <h2 class="label mb-4">{{ .Name }}</h2>
+        <ul class="space-y-2">
+          {{- range .Children }}
+          {{- if ne .Params.footer false }}
+          <li>{{ partial "menu-link.html" (dict "entry" . "page" $page "class" $linkClass) }}</li>
+          {{- end }}
+          {{- end }}
+        </ul>
+      </nav>
+        {{- else }}
+          {{- $loose = $loose | append . }}
+        {{- end }}
+      {{- end }}
+      {{- with $loose }}
+      <nav aria-label="{{ i18n "footerExplore" }}">
+        <h2 class="label mb-4">{{ i18n "footerExplore" }}</h2>
+        <ul class="space-y-2">
+          {{- range . }}
+          <li>{{ partial "menu-link.html" (dict "entry" . "page" $page "class" $linkClass) }}</li>
+          {{- end }}
+        </ul>
+      </nav>
+      {{- end }}
+    </div>
+
+    <div class="mt-14 flex flex-col gap-4 border-t border-line pt-6 text-sm text-muted md:flex-row md:items-center md:justify-between">
+      <p>
+        &copy; {{ now.Year }} {{ site.Params.copyrightHolder }}.
+        {{ i18n "licenseNotice" }} <a href="{{ site.Params.licenseURL }}" target="_blank" rel="noopener" class="underline">{{ site.Params.licenseName }}</a>.
+      </p>
+      <ul class="flex flex-wrap gap-x-5 gap-y-2">
+        {{- range site.Menus.footer }}
+        <li>{{ partial "menu-link.html" (dict "entry" . "page" $page "class" "text-sm text-muted hover:text-teal") }}</li>
+        {{- end }}
+      </ul>
+    </div>
+  </div>
+</footer>

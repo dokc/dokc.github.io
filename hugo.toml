@@ -1,0 +1,169 @@
+baseURL = 'https://dok.community/'
+languageCode = 'en-us'
+title = 'Data on Kubernetes Community'
+enableRobotsTXT = true
+timeZone = 'UTC'
+summaryLength = 30
+
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
+
+# Keep the WordPress URLs so existing links and search results still work.
+[permalinks.page]
+  blog = '/blog/:slug/'
+  newsroom = '/newsroom/:slug/'
+  dok-events = '/dok-events/:slug/'
+  resources = '/resources/:slug/'
+[permalinks.taxonomy]
+  categories = '/blog/category/'
+  tags = '/blog/tag/'
+[permalinks.term]
+  categories = '/blog/category/:slug/'
+  tags = '/blog/tag/:slug/'
+
+[pagination]
+  pagerSize = 12
+
+[outputs]
+  home = ['html', 'rss']
+  section = ['html', 'rss']
+  taxonomy = ['html']
+  term = ['html']
+
+[markup.goldmark.renderer]
+  unsafe = true
+[markup.goldmark.parser.attribute]
+  block = true
+
+# Rebuild Tailwind CSS whenever templates add or remove classes (hugo server otherwise serves stale CSS).
+[build.buildStats]
+  enable = true
+[[build.cachebusters]]
+  source = 'assets/notwatching/hugo_stats\.json'
+  target = 'css'
+[[build.cachebusters]]
+  source = '(postcss|tailwind)\.config\.js'
+  target = 'css'
+
+[[module.mounts]]
+  source = 'assets'
+  target = 'assets'
+[[module.mounts]]
+  disableWatch = true
+  source = 'hugo_stats.json'
+  target = 'assets/notwatching/hugo_stats.json'
+
+[params]
+  tagline = 'The people who run data on Kubernetes'
+  description = 'The Data on Kubernetes Community is where users go to run data on Kubernetes (DoK). We facilitate the creation and sharing of best practices to help users advance in their DoK journey.'
+  copyrightHolder = 'Constantia LLC'
+  licenseName = 'CC BY 4.0'
+  licenseURL = 'https://creativecommons.org/licenses/by/4.0/'
+  ogImage = 'images/orbit-hero.png'
+
+  # Shared external links. Reference them from content as "@slack", "@meetup", etc.
+  [params.links]
+    slack = 'https://join.slack.com/t/dokcommunity/shared_invite/zt-2a0ahuhsh-MdZ4OpF4nr_s4kyOwTurVw'
+    meetup = 'https://www.meetup.com/data-on-kubernetes-community/'
+    youtube = 'https://www.youtube.com/@DoKcommunity'
+    github = 'https://github.com/dokc'
+    getStarted = 'https://github.com/dokc/Get-Started'
+
+  [params.headerCTA]
+    label = 'Join the Slack'
+    url = '@slack'
+
+  [params.newsletter]
+    action = 'https://community.us1.list-manage.com/subscribe/post?u=69b500056de7204820b34995c&id=76703c9e82'
+
+  # Site-wide bar above the header. Leave text empty to hide it.
+  [params.announcement]
+    text = ''
+    url = ''
+
+  # GA4 measurement ID. Loaded only in production builds; leave empty to disable.
+  [params.analytics]
+    ga4 = ''
+
+[[menus.main]]
+  identifier = 'learn'
+  name = 'Learn'
+  weight = 10
+[[menus.main]]
+  parent = 'learn'
+  name = 'DoK Library'
+  pageRef = '/dok-library'
+  weight = 10
+[[menus.main]]
+  parent = 'learn'
+  name = 'DoK Reports'
+  pageRef = '/dok-reports'
+  weight = 20
+[[menus.main]]
+  parent = 'learn'
+  name = 'Get Started Guide'
+  url = 'https://github.com/dokc/Get-Started'
+  weight = 30
+[[menus.main]]
+  parent = 'learn'
+  name = 'Databases on K8s Whitepaper'
+  url = 'https://github.com/cncf/tag-storage/blob/master/data-on-kubernetes-whitepaper/data-on-kubernetes-whitepaper-databases.md'
+  weight = 40
+  [menus.main.params]
+    footer = false
+[[menus.main]]
+  identifier = 'community'
+  name = 'Community'
+  pageRef = '/community'
+  weight = 20
+[[menus.main]]
+  name = 'Events'
+  pageRef = '/dok-events'
+  weight = 30
+[[menus.main]]
+  name = 'Blog'
+  pageRef = '/blog'
+  weight = 40
+[[menus.main]]
+  identifier = 'about'
+  name = 'About'
+  weight = 50
+[[menus.main]]
+  parent = 'about'
+  name = 'About Us'
+  pageRef = '/about'
+  weight = 10
+[[menus.main]]
+  parent = 'about'
+  name = 'Ambassadors'
+  pageRef = '/ambassadors'
+  weight = 20
+[[menus.main]]
+  parent = 'about'
+  name = 'Sponsors'
+  pageRef = '/sponsors'
+  weight = 30
+[[menus.main]]
+  parent = 'about'
+  name = 'Become a Sponsor'
+  pageRef = '/join'
+  weight = 40
+[[menus.main]]
+  parent = 'about'
+  name = 'Newsroom'
+  pageRef = '/newsroom'
+  weight = 50
+
+[[menus.footer]]
+  name = 'Privacy Policy'
+  pageRef = '/privacy-policy'
+  weight = 10
+[[menus.footer]]
+  name = 'Livestream'
+  pageRef = '/live'
+  weight = 20
+[[menus.footer]]
+  name = 'Links'
+  pageRef = '/links'
+  weight = 30

@@ -1,0 +1,16 @@
+{{- /* Upcoming events; falls back to the most recent past events. Fields: label, title, intro, limit, button{label,url} */ -}}
+{{- $s := .s -}}
+{{- $limit := $s.limit | default 3 -}}
+{{- $upcoming := partial "events.html" (dict "when" "upcoming") | first $limit -}}
+<section class="py-14 lg:py-20">
+  <div class="container-dok">
+    {{ partial "section-heading.html" (dict "page" .page "s" $s) }}
+    {{- if $upcoming }}
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">{{ range $upcoming }}{{ partial "cards/event.html" . }}{{ end }}</div>
+    {{- else }}
+    <p class="card mb-6 text-mist">{{ i18n "noUpcomingEvents" }}</p>
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">{{ range partial "events.html" (dict "when" "past") | first $limit }}{{ partial "cards/event.html" . }}{{ end }}</div>
+    {{- end }}
+    {{- with $s.button }}<div class="mt-10">{{ partial "button.html" (dict "label" .label "url" .url "style" "outline") }}</div>{{ end }}
+  </div>
+</section>

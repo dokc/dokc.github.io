@@ -1,0 +1,9 @@
+{{- /* Shared heading block for sections. Args: dict "page" "s" (section) "center" */ -}}
+{{- $s := .s -}}
+{{- if or $s.label $s.title $s.intro -}}
+<div class="mb-10 {{ if .center }}mx-auto max-w-3xl text-center{{ else }}max-w-3xl{{ end }}">
+  {{- with $s.label }}<p class="label mb-3">{{ . }}</p>{{ end }}
+  {{- with $s.title }}<h2 class="text-title">{{ . }}</h2>{{ end }}
+  {{- with $s.intro }}<div class="prose prose-wide mt-5 text-lead">{{ partial "md.html" (dict "page" $.page "text" .) }}</div>{{ end }}
+</div>
+{{- end -}}

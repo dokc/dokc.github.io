@@ -1,0 +1,14 @@
+{{- /* Mailchimp signup (plain POST, no third-party script). Args: dict "id" "title" "text" (all optional) */ -}}
+{{- with site.Params.newsletter.action -}}
+{{- $q := (urls.Parse .).Query -}}
+{{- $id := $.id | default "newsletter-email" -}}
+<form action="{{ . }}" method="post" target="_blank" class="flex flex-col gap-3">
+  <label for="{{ $id }}" class="text-heading text-paper">{{ $.title | default (i18n "newsletterTitle") }}</label>
+  <p class="text-base text-mist">{{ $.text | default (i18n "newsletterText") }}</p>
+  <div class="flex flex-col gap-3 sm:flex-row">
+    <input id="{{ $id }}" type="email" name="EMAIL" required autocomplete="email" placeholder="{{ i18n "newsletterPlaceholder" }}" class="min-w-0 flex-1 rounded-full border border-line bg-deep-sea px-5 py-3 text-base text-paper placeholder:text-muted focus:border-teal focus:outline-none">
+    <div class="absolute -left-[5000px]" aria-hidden="true"><input type="text" name="b_{{ $q.Get "u" }}_{{ $q.Get "id" }}" tabindex="-1" value=""></div>
+    <button type="submit" class="btn btn-primary">{{ i18n "newsletterButton" }}</button>
+  </div>
+</form>
+{{- end -}}

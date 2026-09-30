@@ -1,0 +1,12 @@
+{{- /* Library resource card; links straight to the resource. Context: page */ -}}
+{{- $type := .Params.resourceType | default "article" -}}
+<a href="{{ .Params.link | default .RelPermalink }}" class="card group flex h-full flex-col gap-4" data-type="{{ $type }}"{{ if .Params.link }} target="_blank" rel="noopener"{{ end }}>
+  <div class="flex items-center justify-between gap-4">
+    <p class="label">{{ i18n (printf "resourceType_%s" $type) | default $type }}</p>
+    {{ partial "heptagon.html" (dict "type" $type "size" 44 "class" "shrink-0 text-violet") }}
+  </div>
+  <h3 class="text-xl leading-snug font-extrabold text-paper group-hover:text-teal">{{ .Title }}</h3>
+  {{- with .Params.credit }}<p class="font-mono text-sm text-muted">{{ . }}</p>{{ end }}
+  {{- with .Description }}<p class="line-clamp-4 text-base text-mist">{{ . }}</p>{{ end }}
+  <span class="mt-auto pt-2 font-extrabold text-teal">{{ i18n "openResource" }} &rarr;</span>
+</a>

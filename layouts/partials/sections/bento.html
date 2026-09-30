@@ -1,0 +1,46 @@
+{{- /* Bento grid inside a namespace frame (brand kit homepage).
+Fields: frame (label on the dashed frame), items[]: style (teal|paper|sun|violet|panel), size (large|wide|normal), label, title, text, button{label,url} */ -}}
+{{- $s := .s -}}
+{{- $styles := dict
+  "teal" (dict "card" "bg-teal text-deep-sea" "label" "text-deep-sea" "link" "text-deep-sea hover:text-deep-sea")
+  "paper" (dict "card" "bg-paper text-graphite" "label" "text-deep-teal" "link" "text-deep-teal hover:text-graphite")
+  "sun" (dict "card" "bg-sun text-deep-sea" "label" "text-deep-sea" "link" "text-deep-sea hover:text-deep-sea")
+  "violet" (dict "card" "bg-violet text-deep-sea" "label" "text-deep-sea" "link" "text-deep-sea hover:text-deep-sea")
+  "panel" (dict "card" "border border-line bg-panel text-paper" "label" "text-teal" "link" "text-teal hover:text-paper")
+-}}
+{{- $sizes := dict "large" "lg:row-span-2 lg:min-h-[420px]" "wide" "lg:col-span-2" "normal" "" -}}
+<section class="py-14 lg:py-20">
+  <div class="container-dok">
+    {{ partial "section-heading.html" (dict "page" .page "s" $s) }}
+    <div class="namespace">
+      {{- with $s.frame }}<span class="namespace-label">{{ . }}</span>{{ end }}
+      <div class="grid gap-4 lg:grid-cols-[2fr_1fr_1fr] lg:auto-rows-[minmax(200px,auto)]">
+        {{- range $s.items }}
+        {{- $st := index $styles (.style | default "panel") }}
+        {{- $large := eq .size "large" }}
+        {{- $btnStyle := cond (eq (.style | default "panel") "panel") "primary" "dark" }}
+        <article class="relative flex flex-col justify-between gap-6 overflow-hidden rounded-card p-7 lg:p-8 {{ $st.card }} {{ index $sizes (.size | default "normal") }}">
+          {{- if $large }}
+          <div class="pointer-events-none absolute -right-16 -bottom-16 opacity-20" aria-hidden="true">{{ partial "mark.html" (dict "k" "#0F2E36" "d" "#0F2E36" "size" 240) }}</div>
+          {{- end }}
+          {{- with .label }}<p class="relative font-mono text-sm font-semibold uppercase tracking-[0.04em] {{ $st.label }}">{{ . }}</p>{{ end }}
+          <div class="relative">
+            <h3 class="{{ if $large }}text-[clamp(2.75rem,6vw,5.5rem)] leading-[0.9] tracking-[-0.045em]{{ else }}text-[clamp(1.6rem,2.4vw,2.125rem)] leading-none tracking-[-0.03em]{{ end }} font-extrabold">{{ .title }}</h3>
+            {{- with .text }}<p class="mt-3 text-lg font-semibold opacity-90">{{ . }}</p>{{ end }}
+          </div>
+          {{- with .button }}
+          <div class="relative">
+            {{- if $large }}
+            {{ partial "button.html" (dict "label" .label "url" .url "style" $btnStyle) }}
+            {{- else }}
+            {{- $u := partial "link-url.html" .url }}
+            <a href="{{ $u }}" class="font-extrabold underline-offset-4 hover:underline {{ $st.link }}"{{ if hasPrefix $u "http" }} target="_blank" rel="noopener"{{ end }}>{{ .label }} &rarr;</a>
+            {{- end }}
+          </div>
+          {{- end }}
+        </article>
+        {{- end }}
+      </div>
+    </div>
+  </div>
+</section>

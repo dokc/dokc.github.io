@@ -1,0 +1,10 @@
+services:
+  hugo:
+    build: .
+    ports:
+      - "5003:5001"
+    volumes:
+      - .:/src
+      - /src/node_modules
+    environment:
+      - HUGO_ENV=development

@@ -1,0 +1,10 @@
+{{- /* Event card. Context: page */ -}}
+{{- $type := .Params.eventType | default "other" -}}
+<a href="{{ .RelPermalink }}" class="card group flex h-full flex-col gap-4">
+  <div class="flex flex-wrap items-center gap-3">
+    {{- with .Params.eventStart }}<span class="chip">{{ time.AsTime . | time.Format ":date_medium" }}</span>{{ end }}
+    <span class="label">{{ i18n (printf "eventType_%s" $type) | default $type }}</span>
+  </div>
+  <h3 class="text-xl leading-snug font-extrabold text-paper group-hover:text-teal">{{ .Title }}</h3>
+  {{- with .Params.location }}<p class="mt-auto font-mono text-sm text-muted">{{ . }}</p>{{ end }}
+</a>

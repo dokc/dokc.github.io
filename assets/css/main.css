@@ -1,0 +1,287 @@
+@import "tailwindcss";
+
+/* DoK Brand Kit 2027 ("Evolved") design tokens */
+@theme {
+  --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-deep-sea: #0F2E36;
+  --color-panel: #17434D;
+  --color-line: #2B5C66;
+  --color-mist: #C3DCDD;
+  --color-muted: #94B8BB;
+  --color-code: #0A2229;
+  --color-teal: #12DDB6;
+  --color-deep-teal: #08735F;
+  --color-graphite: #3C3C3B;
+  --color-paper: #F5F5F0;
+  --color-coral: #FF6B4A;
+  --color-violet: #8B6CFF;
+  --color-sun: #FFC857;
+
+  --radius-card: 28px;
+  --radius-frame: 36px;
+
+  --animate-orbit: orbit 60s linear infinite;
+
+  @keyframes orbit {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+}
+
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('/fonts/manrope-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('/fonts/manrope-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url('/fonts/geist-mono-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url('/fonts/geist-mono-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-deep-sea font-sans text-paper antialiased;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  @media (min-width: 1024px) {
+    body { font-size: 20px; }
+  }
+  /* Sentence case everywhere: no text-transform on headings. */
+  h1, h2, h3, h4 {
+    @apply font-extrabold;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+  a {
+    @apply text-teal transition-colors duration-200;
+  }
+  a:hover {
+    @apply text-paper;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-teal;
+  }
+  ::selection {
+    @apply bg-teal text-deep-sea;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .container-dok {
+    @apply mx-auto w-full max-w-[1280px] px-5 lg:px-20;
+  }
+
+  /* Type scale from the brand kit */
+  .text-display {
+    @apply font-extrabold;
+    font-size: clamp(3rem, 7vw, 5.375rem);
+    line-height: 0.95;
+    letter-spacing: -0.045em;
+  }
+  .text-title {
+    @apply font-extrabold;
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    line-height: 1;
+    letter-spacing: -0.035em;
+  }
+  .text-heading {
+    @apply font-bold;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+  .text-lead {
+    @apply text-mist;
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    line-height: 1.45;
+  }
+
+  /* Mono label: the only place caps are allowed */
+  .label {
+    @apply font-mono text-sm font-semibold uppercase text-teal;
+    letter-spacing: 0.04em;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-base font-extrabold whitespace-nowrap transition-colors duration-200;
+  }
+  .btn-primary {
+    @apply bg-teal text-deep-sea;
+  }
+  .btn-primary:hover {
+    @apply bg-paper text-deep-sea;
+  }
+  .btn-outline {
+    @apply border-2 border-paper px-[22px] py-[10px] text-paper;
+  }
+  .btn-outline:hover {
+    @apply border-teal text-teal;
+  }
+  .btn-dark {
+    @apply bg-deep-sea text-paper;
+  }
+  .btn-dark:hover {
+    @apply bg-panel text-paper;
+  }
+
+  /* Cards */
+  .card {
+    @apply rounded-card border border-line bg-panel p-6 text-paper lg:p-7;
+  }
+  a.card {
+    @apply block transition-colors duration-200;
+  }
+  a.card:hover {
+    @apply border-teal text-paper;
+  }
+
+  /* Namespace frame: dashed box that groups things, like a cluster diagram */
+  .namespace {
+    @apply relative rounded-frame border-2 border-dashed border-line px-4 pt-9 pb-4 lg:px-6 lg:pb-6;
+  }
+  .namespace-label {
+    @apply absolute -top-3 left-6 bg-deep-sea px-2.5 font-mono text-sm text-teal lg:left-8;
+  }
+
+  /* Terminal chip */
+  .chip {
+    @apply inline-flex items-center gap-2 rounded-lg border border-line bg-code px-3 py-1 font-mono text-sm text-teal;
+  }
+
+  /* Section tones (used by flexible page sections) */
+  .tone-panel {
+    @apply bg-panel;
+  }
+
+  /* Rendered Markdown */
+  .prose {
+    @apply text-mist;
+    max-width: 72ch;
+  }
+  .prose > * + * {
+    margin-top: 1.1em;
+  }
+  .prose h1, .prose h2, .prose h3, .prose h4 {
+    @apply text-paper;
+    margin-top: 1.6em;
+  }
+  .prose > :first-child {
+    margin-top: 0;
+  }
+  .prose h1 { font-size: clamp(2rem, 4vw, 2.75rem); letter-spacing: -0.035em; }
+  .prose h2 { font-size: clamp(1.5rem, 3vw, 2rem); letter-spacing: -0.02em; line-height: 1.15; }
+  .prose h3 { font-size: 1.35rem; }
+  .prose h4 { font-size: 1.15rem; }
+  .prose strong, .prose b { @apply font-bold text-paper; }
+  .prose a { @apply underline decoration-1 underline-offset-4; }
+  .prose ul { @apply list-disc pl-6; }
+  .prose ol { @apply list-decimal pl-6; }
+  .prose li + li { margin-top: 0.35em; }
+  .prose li::marker { @apply text-teal; }
+  .prose blockquote {
+    @apply border-l-4 border-teal pl-5 text-paper italic;
+  }
+  .prose hr { @apply border-line; }
+  .prose img, .prose video {
+    @apply h-auto max-w-full rounded-2xl;
+  }
+  .prose figure figcaption { @apply mt-2 text-sm text-muted; }
+  .prose code {
+    @apply rounded-md bg-code px-1.5 py-0.5 font-mono text-[0.9em] text-teal;
+    overflow-wrap: anywhere;
+  }
+  .prose pre {
+    @apply overflow-x-auto rounded-xl bg-code p-4 font-mono text-sm leading-relaxed;
+  }
+  .prose pre code { @apply bg-transparent p-0 text-paper; }
+  .prose table { @apply block w-full overflow-x-auto border-collapse text-base; }
+  .prose th, .prose td { @apply border border-line px-3 py-2 text-left align-top; }
+  .prose th { @apply bg-panel text-paper; }
+  .prose iframe {
+    @apply w-full rounded-2xl border-0;
+  }
+  .prose iframe[src*="youtube"] {
+    aspect-ratio: 16 / 9;
+    height: auto;
+  }
+  .prose-wide { max-width: none; }
+
+  .video {
+    @apply relative w-full overflow-hidden rounded-2xl bg-code;
+    aspect-ratio: 16 / 9;
+  }
+  .video iframe {
+    @apply absolute inset-0 h-full w-full border-0;
+  }
+
+  /* Hero sky with the Orbit visual */
+  .hero-sky {
+    @apply relative overflow-hidden;
+    background: radial-gradient(60% 70% at 12% 20%, rgb(139 108 255 / 0.28), transparent 70%), var(--color-deep-sea);
+  }
+  .hero-art {
+    mask-image: linear-gradient(to bottom, #000 70%, transparent);
+  }
+
+  /* Animated Orbit (layouts/partials/orbit.html) */
+  .orbit-dash {
+    stroke-dasharray: 2 46;
+    animation: orbit-dash linear infinite;
+  }
+  @keyframes orbit-dash {
+    to { stroke-dashoffset: -1000; }
+  }
+  .orbit-halo {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: orbit-pulse 6s ease-in-out infinite;
+  }
+  @keyframes orbit-pulse {
+    0%, 100% { opacity: 0.7; transform: scale(0.96); }
+    50% { opacity: 1; transform: scale(1.04); }
+  }
+  @media (min-width: 1024px) {
+    .hero-art {
+      mask-image: linear-gradient(to right, transparent, #000 22%), linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent);
+      mask-composite: intersect;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{{- /* Latest library resources. Fields: label, title, intro, limit, button{label,url} */ -}}
+{{- $s := .s -}}
+{{- $items := where site.RegularPages "Section" "resources" | first ($s.limit | default 6) -}}
+<section class="py-14 lg:py-20">
+  <div class="container-dok">
+    {{ partial "section-heading.html" (dict "page" .page "s" $s) }}
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {{- range $items }}{{ partial "cards/resource.html" . }}{{ end }}
+    </div>
+    {{- with $s.button }}<div class="mt-10">{{ partial "button.html" (dict "label" .label "url" .url "style" "outline") }}</div>{{ end }}
+  </div>
+</section>

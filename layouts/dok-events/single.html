@@ -1,0 +1,34 @@
+{{ define "main" }}
+{{- $type := .Params.eventType | default "other" }}
+<section class="hero-sky border-b border-line">
+  <div class="container-dok grid gap-10 py-14 lg:grid-cols-[2fr_1fr] lg:items-end lg:py-20">
+    <div>
+      <p class="label mb-4">{{ i18n (printf "eventType_%s" $type) | default $type }}</p>
+      <h1 class="text-title">{{ .Title }}</h1>
+    </div>
+    <dl class="card grid gap-4 text-base">
+      {{- with .Params.eventStart }}
+      <div>
+        <dt class="label">{{ i18n "eventDate" }}</dt>
+        <dd class="mt-1 font-bold">{{ time.AsTime . | time.Format ":date_long" }}{{ with $.Params.eventEnd }}{{ if ne . $.Params.eventStart }} – {{ time.AsTime . | time.Format ":date_long" }}{{ end }}{{ end }}</dd>
+      </div>
+      {{- end }}
+      {{- with .Params.location }}
+      <div>
+        <dt class="label">{{ i18n "eventLocation" }}</dt>
+        <dd class="mt-1 font-bold">{{ . }}</dd>
+      </div>
+      {{- end }}
+      {{- with .Params.registerURL }}
+      <div>{{ partial "button.html" (dict "label" (i18n "register") "url" . "class" "w-full") }}</div>
+      {{- end }}
+    </dl>
+  </div>
+</section>
+{{- with .Content }}
+<div class="container-dok py-14 lg:py-20">
+  <div class="prose mx-auto">{{ . }}</div>
+</div>
+{{- end }}
+{{ partial "sections.html" . }}
+{{ end }}

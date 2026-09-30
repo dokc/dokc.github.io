@@ -1,0 +1,14 @@
+# Sponsor tiers, highest first.
+tiers:
+  - Platinum
+  - Golden
+  - Silver
+  - Startup
+
+# Add sponsors here. `tier` must match one of the tiers above; `logo` is a path under assets/.
+# Example:
+#   - name: Example Inc.
+#     tier: Platinum
+#     url: https://example.com/
+#     logo: images/sponsors/example.svg
+sponsors: []

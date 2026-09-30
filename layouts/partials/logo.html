@@ -1,0 +1,20 @@
+{{- /* Logo lockup from the brand kit. Args: dict "variant" (dark|light|teal) "size" (sm|md|lg) */ -}}
+{{- $variants := dict
+  "dark" (dict "k" "#12DDB6" "d" "#F5F5F0" "text" "text-paper")
+  "light" (dict "k" "#12DDB6" "d" "#3C3C3B" "text" "text-graphite")
+  "teal" (dict "k" "#0F2E36" "d" "#0F2E36" "text" "text-deep-sea")
+-}}
+{{- $sizes := dict
+  "sm" (dict "mark" 36 "gap" "gap-3" "type" "text-base")
+  "md" (dict "mark" 44 "gap" "gap-4" "type" "text-lg lg:text-xl")
+  "lg" (dict "mark" 72 "gap" "gap-6" "type" "text-3xl")
+-}}
+{{- $v := index $variants (.variant | default "dark") -}}
+{{- $s := index $sizes (.size | default "md") -}}
+<span class="inline-flex items-center {{ $s.gap }} {{ $v.text }}">
+  {{- partial "mark.html" (dict "k" $v.k "d" $v.d "size" $s.mark "class" "shrink-0") -}}
+  <span class="flex flex-col {{ $s.type }} leading-[0.95]">
+    <span class="font-extrabold tracking-[-0.03em]">DoK</span>
+    <span class="font-normal tracking-[-0.02em]">Community</span>
+  </span>
+</span>

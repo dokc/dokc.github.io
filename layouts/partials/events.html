@@ -1,0 +1,15 @@
+{{- /* Returns upcoming events (soonest first) or past events (latest first). Args: dict "when" (upcoming|past) */ -}}
+{{- $today := now.Format "2006-01-02" -}}
+{{- $events := where site.RegularPages "Section" "dok-events" -}}
+{{- $out := slice -}}
+{{- range $events -}}
+  {{- $end := .Params.eventEnd | default .Params.eventStart | default "" -}}
+  {{- $upcoming := and $end (ge (string $end) $today) -}}
+  {{- if eq $upcoming (eq $.when "upcoming") }}{{ $out = $out | append . }}{{ end -}}
+{{- end -}}
+{{- if eq .when "upcoming" -}}
+  {{- $out = sort $out "Params.eventStart" "asc" -}}
+{{- else -}}
+  {{- $out = sort $out "Params.eventStart" "desc" -}}
+{{- end -}}
+{{- return $out -}}

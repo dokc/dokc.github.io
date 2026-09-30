@@ -1,0 +1,12 @@
+{{- /* Latest posts from a section. Fields: label, title, intro, section (default blog), limit, button{label,url} */ -}}
+{{- $s := .s -}}
+{{- $items := where site.RegularPages "Section" ($s.section | default "blog") | first ($s.limit | default 3) -}}
+<section class="py-14 lg:py-20">
+  <div class="container-dok">
+    {{ partial "section-heading.html" (dict "page" .page "s" $s) }}
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {{- range $items }}{{ partial "cards/post.html" . }}{{ end }}
+    </div>
+    {{- with $s.button }}<div class="mt-10">{{ partial "button.html" (dict "label" .label "url" .url "style" "outline") }}</div>{{ end }}
+  </div>
+</section>

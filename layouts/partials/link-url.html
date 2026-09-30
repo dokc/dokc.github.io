@@ -1,0 +1,10 @@
+{{- /* Resolves a content URL: "@key" -> site.Params.links.key, "/path" -> relURL, anything else as-is. */ -}}
+{{- $u := . | default "" -}}
+{{- if hasPrefix $u "@" -}}
+  {{- $key := strings.TrimPrefix "@" $u | lower -}}
+  {{- $u = index site.Params.links $key | default "" -}}
+  {{- if not $u }}{{ errorf "link-url: unknown link key %q (see params.links in hugo.toml)" $key }}{{ end -}}
+{{- else if hasPrefix $u "/" -}}
+  {{- $u = relURL $u -}}
+{{- end -}}
+{{- return $u -}}

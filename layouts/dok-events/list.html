@@ -1,0 +1,19 @@
+{{ define "main" }}
+{{ partial "page-header.html" (dict "page" .) }}
+<div class="container-dok py-14 lg:py-20">
+  {{- with .Content }}<div class="prose mb-12">{{ . }}</div>{{ end }}
+
+  <h2 class="text-heading mb-6">{{ i18n "upcomingEvents" }}</h2>
+  {{- with partial "events.html" (dict "when" "upcoming") }}
+  <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">{{ range . }}{{ partial "cards/event.html" . }}{{ end }}</div>
+  {{- else }}
+  <p class="card text-mist">{{ i18n "noUpcomingEvents" }}</p>
+  {{- end }}
+
+  <h2 class="text-heading mt-16 mb-6">{{ i18n "pastEvents" }}</h2>
+  <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+    {{- range partial "events.html" (dict "when" "past") }}{{ partial "cards/event.html" . }}{{ end }}
+  </div>
+</div>
+{{ partial "sections.html" . }}
+{{ end }}

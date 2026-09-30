@@ -1,0 +1,19 @@
+{{ define "main" }}
+{{ partial "page-header.html" (dict "page" .) }}
+{{- $items := where site.RegularPages "Section" "resources" }}
+<div class="container-dok py-14 lg:py-20">
+  {{- with .Content }}<div class="prose mb-12">{{ . }}</div>{{ end }}
+  {{- $types := slice }}
+  {{- range $items }}{{ $types = $types | append (.Params.resourceType | default "article") }}{{ end }}
+  <div class="mb-10 flex flex-wrap items-center gap-3" role="group" aria-label="{{ i18n "filterByType" }}">
+    <button type="button" class="chip cursor-pointer aria-pressed:border-teal aria-pressed:text-paper" data-filter="all" aria-pressed="true">{{ i18n "allTypes" }}</button>
+    {{- range $types | uniq | sort }}
+    <button type="button" class="chip cursor-pointer aria-pressed:border-teal aria-pressed:text-paper" data-filter="{{ . }}" aria-pressed="false">{{ i18n (printf "resourceType_%s" .) | default . }}</button>
+    {{- end }}
+  </div>
+  <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+    {{- range $items }}{{ partial "cards/resource.html" . }}{{ end }}
+  </div>
+</div>
+{{ partial "sections.html" . }}
+{{ end }}

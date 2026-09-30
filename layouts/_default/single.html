@@ -1,0 +1,9 @@
+{{ define "main" }}
+{{- if not .Params.hideTitle }}{{ partial "page-header.html" (dict "page" .) }}{{ end }}
+{{- with .Content }}
+<div class="container-dok py-14 lg:py-20">
+  <div class="prose mx-auto">{{ . }}</div>
+</div>
+{{- end }}
+{{ partial "sections.html" . }}
+{{ end }}

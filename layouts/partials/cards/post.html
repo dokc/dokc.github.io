@@ -1,0 +1,15 @@
+{{- /* Blog/newsroom card. Context: page */ -}}
+{{- $img := "" -}}
+{{- with .Params.image }}{{ $img = $.Resources.Get . }}{{ end -}}
+<a href="{{ .RelPermalink }}" class="card group flex h-full flex-col overflow-hidden p-0 lg:p-0">
+  {{- if $img }}
+  {{ partial "img.html" (dict "src" $img "alt" "" "fill" "800x450" "width" 800 "sizes" "(min-width: 1024px) 400px, 100vw" "class" "aspect-[16/9] w-full object-cover") }}
+  {{- else }}
+  <div class="flex aspect-[16/9] w-full items-center justify-center bg-deep-sea" aria-hidden="true">{{ partial "mark.html" (dict "size" 72 "class" "opacity-80") }}</div>
+  {{- end }}
+  <div class="flex flex-1 flex-col gap-3 p-6">
+    <p class="label">{{ .Date | time.Format ":date_medium" }}{{ with .Params.location }} · {{ . }}{{ end }}</p>
+    <h3 class="text-xl leading-snug font-extrabold text-paper group-hover:text-teal">{{ .Title }}</h3>
+    {{- with .Description | default .Summary }}<p class="line-clamp-3 text-base text-mist">{{ . | plainify | htmlUnescape }}</p>{{ end }}
+  </div>
+</a>

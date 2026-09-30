@@ -1,0 +1,35 @@
+{{- /* Two columns: text + media (image, video) or text + text.
+Fields: label, title, content (md), content2 (md, second text column), image, video (YouTube URL),
+ratio (half|third), reverse (media on the left), card (render inside a card), tone (panel), buttons[] */ -}}
+{{- $s := .s -}}
+{{- $page := .page -}}
+{{- $img := partial "resolve-image.html" (dict "page" $page "path" $s.image) -}}
+{{- $videoID := "" -}}
+{{- with $s.video }}{{ with findRESubmatch `(?:youtu\.be/|v=|embed/|live/)([A-Za-z0-9_-]{11})` . 1 }}{{ $videoID = index (index . 0) 1 }}{{ end }}{{ end -}}
+{{- $hasMedia := or $img $videoID $s.content2 -}}
+{{- /* The text column always gets the wider share, whichever side the media is on. */ -}}
+{{- $cols := cond (eq $s.ratio "third") (cond $s.reverse "lg:grid-cols-[1fr_2fr]" "lg:grid-cols-[2fr_1fr]") "lg:grid-cols-2" -}}
+<section class="py-14 lg:py-20 {{ if eq $s.tone "panel" }}tone-panel{{ end }}">
+  <div class="container-dok">
+    <div class="{{ if $s.card }}card lg:p-12 {{ end }}grid items-center gap-10 {{ if $hasMedia }}{{ $cols }}{{ end }}">
+      <div class="{{ if $s.reverse }}lg:order-2{{ end }}">
+        {{- with $s.label }}<p class="label mb-3">{{ . }}</p>{{ end }}
+        {{- with $s.title }}<h2 class="text-title mb-6">{{ . }}</h2>{{ end }}
+        <div class="prose">{{ partial "md.html" (dict "page" $page "text" $s.content) }}</div>
+        {{ partial "buttons.html" (dict "buttons" $s.buttons "class" "mt-8") }}
+      </div>
+      {{- if $hasMedia }}
+      <div class="{{ if $s.reverse }}lg:order-1{{ end }}">
+        {{- if $videoID }}
+        <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/{{ $videoID }}" title="{{ $s.title | default $page.Title }}" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        {{- else if $img }}
+        {{- /* Never upscale: small icons keep their natural size, photos fill the column. */}}
+        {{ partial "img.html" (dict "src" $img "alt" ($s.imageAlt | default "") "width" 1200 "sizes" "(min-width: 1024px) 40vw, 100vw" "class" "mx-auto h-auto w-auto max-w-full rounded-card") }}
+        {{- else }}
+        <div class="prose">{{ partial "md.html" (dict "page" $page "text" $s.content2) }}</div>
+        {{- end }}
+      </div>
+      {{- end }}
+    </div>
+  </div>
+</section>

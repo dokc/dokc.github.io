@@ -1,0 +1,15 @@
+{{ define "main" }}
+<section class="hero-sky min-h-[70vh]">
+  <div class="container-dok flex flex-col items-center py-16 text-center">
+    {{ partial "mark.html" (dict "size" 72) }}
+    <h1 class="text-title mt-6">{{ .Title }}</h1>
+    {{- with .Content }}<div class="text-lead mt-4 max-w-md">{{ . }}</div>{{ end }}
+    <ul class="mt-10 flex w-full max-w-md flex-col gap-3">
+      {{- range .Params.links }}
+      {{- $u := partial "link-url.html" .url }}
+      <li><a href="{{ $u }}" class="btn btn-outline w-full whitespace-normal"{{ if hasPrefix $u "http" }} target="_blank" rel="noopener"{{ end }}>{{ .label }}</a></li>
+      {{- end }}
+    </ul>
+  </div>
+</section>
+{{ end }}

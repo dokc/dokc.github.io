@@ -1,0 +1,2 @@
+{{- /* Renders Markdown from front matter with the page's render hooks, so bundle images resolve. Args: dict "page" "text" */ -}}
+{{- with .text -}}{{- $.page.RenderString (dict "display" "block") . -}}{{- end -}}

@@ -1,0 +1,18 @@
+.DS_Store
+node_modules/
+*.log
+
+# Hugo
+/public/
+/resources/_gen/
+.hugo_build.lock
+hugo_stats.json
+
+*.swp
+*~
+
+# WordPress export: contains private pages and author emails
+*.WordPress.*.xml
+hack/wp2hugo/.venv/
+hack/wp2hugo/.cache/
+__pycache__/

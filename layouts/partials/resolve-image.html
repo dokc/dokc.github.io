@@ -1,0 +1,7 @@
+{{- /* Resolves an image path from content: page bundle resource first, then assets/. Args: dict "page" "path" */ -}}
+{{- $r := "" -}}
+{{- with .path -}}
+  {{- with $.page.Resources.Get . }}{{ $r = . }}{{ else }}{{ with resources.Get . }}{{ $r = . }}{{ end }}{{ end -}}
+  {{- if not $r }}{{ warnf "%s: image %q not found in page bundle or assets" $.page.File.Path . }}{{ end -}}
+{{- end -}}
+{{- return $r -}}

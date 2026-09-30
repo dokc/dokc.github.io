@@ -1,0 +1,18 @@
+{{- /* Collapsible panels (replaces WordPress tabs). Fields: label, title, intro, tabs[]: title, content (md) */ -}}
+{{- $s := .s -}}
+<section class="py-14 lg:py-20">
+  <div class="container-dok">
+    {{ partial "section-heading.html" (dict "page" .page "s" $s) }}
+    <div class="flex flex-col gap-3">
+      {{- range $i, $t := $s.tabs }}
+      <details class="group card p-0 lg:p-0"{{ if eq $i 0 }} open{{ end }}>
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 p-6 text-xl font-bold text-paper lg:px-8">
+          {{ $t.title }}
+          <span class="font-mono text-teal transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+        </summary>
+        <div class="prose prose-wide border-t border-line p-6 lg:px-8">{{ partial "md.html" (dict "page" $.page "text" $t.content) }}</div>
+      </details>
+      {{- end }}
+    </div>
+  </div>
+</section>

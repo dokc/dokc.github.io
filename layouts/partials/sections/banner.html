@@ -1,0 +1,14 @@
+{{- /* Full-width colored banner. Fields: label, text, button{label,url}, style (teal|sun|violet) */ -}}
+{{- $s := .s -}}
+{{- $styles := dict "teal" "bg-teal" "sun" "bg-sun" "violet" "bg-violet" -}}
+<section class="py-10">
+  <div class="container-dok">
+    <div class="flex flex-col items-start justify-between gap-6 rounded-card p-8 text-deep-sea lg:flex-row lg:items-center lg:p-10 {{ index $styles ($s.style | default "teal") }}">
+      <div>
+        {{- with $s.label }}<p class="mb-2 font-mono text-sm font-semibold uppercase tracking-[0.04em]">{{ . }}</p>{{ end }}
+        <p class="text-[clamp(1.5rem,3vw,2.125rem)] font-extrabold leading-tight tracking-[-0.03em]">{{ $s.text }}</p>
+      </div>
+      {{- with $s.button }}{{ partial "button.html" (dict "label" .label "url" .url "style" "dark") }}{{ end }}
+    </div>
+  </div>
+</section>

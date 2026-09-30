@@ -1,0 +1,10 @@
+{{ define "main" }}
+{{ partial "page-header.html" (dict "page" . "label" (i18n .Data.Plural | default .Data.Plural)) }}
+<div class="container-dok py-14 lg:py-20">
+  <ul class="flex flex-wrap gap-3">
+    {{- range .Data.Terms.ByCount }}
+    <li><a href="{{ .Page.RelPermalink }}" class="chip hover:border-teal hover:text-paper">{{ .Page.Title }} <span class="text-muted">{{ .Count }}</span></a></li>
+    {{- end }}
+  </ul>
+</div>
+{{ end }}

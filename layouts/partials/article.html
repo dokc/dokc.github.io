@@ -1,0 +1,40 @@
+{{- /* Article body shared by blog and newsroom. Context: page */ -}}
+{{- $img := "" -}}
+{{- with .Params.image }}{{ $img = $.Resources.Get . }}{{ end -}}
+<article>
+  <header class="border-b border-line">
+    <div class="container-dok py-14 lg:py-20">
+      <div class="mx-auto max-w-3xl">
+        <p class="label mb-4">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>
+          {{- with .Params.location }} · {{ . }}{{ end }}
+        </p>
+        <h1 class="text-title">{{ .Title }}</h1>
+        {{- with .Params.author }}<p class="mt-6 text-mist">{{ i18n "by" }} <span class="font-bold text-paper">{{ . }}</span></p>{{ end }}
+      </div>
+    </div>
+  </header>
+  <div class="container-dok py-14 lg:py-20">
+    <div class="mx-auto max-w-3xl">
+      {{- /* Skip the featured image when the body already shows it (any -WxH size variant). */}}
+      {{- $inBody := and .Params.image (strings.Contains .RawContent (replaceRE `(-\d+x\d+)?\.\w+$` "" .Params.image)) }}
+      {{- if and $img (not .Params.hideImage) (not $inBody) }}
+      {{ partial "img.html" (dict "src" $img "alt" "" "width" 1600 "sizes" "(min-width: 1024px) 768px, 100vw" "class" "mb-12 w-full rounded-card" "eager" true) }}
+      {{- end }}
+      <div class="prose">{{ .Content }}</div>
+      {{- with .GetTerms "categories" }}
+      <div class="mt-14 flex flex-wrap items-center gap-3 border-t border-line pt-6">
+        <span class="label">{{ i18n "categories" }}</span>
+        {{- range . }}<a href="{{ .RelPermalink }}" class="chip hover:border-teal hover:text-paper">{{ .LinkTitle }}</a>{{ end }}
+      </div>
+      {{- end }}
+      {{- with .GetTerms "tags" }}
+      <div class="mt-4 flex flex-wrap items-center gap-3">
+        <span class="label">{{ i18n "tags" }}</span>
+        {{- range . }}<a href="{{ .RelPermalink }}" class="chip hover:border-teal hover:text-paper">{{ .LinkTitle }}</a>{{ end }}
+      </div>
+      {{- end }}
+    </div>
+  </div>
+</article>
+{{ partial "sections.html" . }}

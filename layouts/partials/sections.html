@@ -1,0 +1,10 @@
+{{- /* Renders .Params.sections: each entry's "type" maps to partials/sections/<type>.html */ -}}
+{{- $page := . -}}
+{{- range $i, $s := .Params.sections -}}
+  {{- $tpl := printf "sections/%s.html" $s.type -}}
+  {{- if templates.Exists (printf "partials/%s" $tpl) -}}
+    {{- partial $tpl (dict "page" $page "s" $s "index" $i) -}}
+  {{- else -}}
+    {{- errorf "%s: unknown section type %q" $page.File.Path $s.type -}}
+  {{- end -}}
+{{- end -}}
