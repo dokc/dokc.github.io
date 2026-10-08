@@ -24,33 +24,18 @@ sections:
   ratio: third
   reverse: true
 - type: people
-  intro: '## DoK Staff'
+  intro: '## Core Team'
   people:
-  - name: Melissa Logan
-    role: Managing Director
-    image: bwmelissa.jpg
+  - name: Kate Obiidykhata
+    role: Community Cosmonaut
+    image: images/people/kate-obiidykhata.jpg
     links:
-      linkedin: https://www.linkedin.com/in/mklogan/
-      x: https://twitter.com/Melissa_B2B
-  - name: Paul Au
-    role: Community Manager
-    image: bwpaulau.png
+      linkedin: https://www.linkedin.com/in/kate-obiidykhata-692a79ba
+  - name: Sergey Pronin
+    role: Community Cosmonaut
+    image: images/people/sergey-pronin.jpg
     links:
-      linkedin: https://www.linkedin.com/in/paul-au/
-  - name: Whitney True
-    role: Head of Marketing
-    image: bwwhitneytrue.jpg
-    links: {}
-  - name: Diogenese Topper
-    role: Marketing Operations
-    image: bwdiogenese.jpg
-    links:
-      linkedin: https://www.linkedin.com/in/diogenese-topper-ab8a67227/
-  - name: Kenzie Dettman
-    role: Business Operations
-    image: bwkenzied.jpg
-    links:
-      linkedin: https://www.linkedin.com/in/kenziedettman/
+      linkedin: https://www.linkedin.com/in/sergeypronin/
 - type: split
   content: |
     ## Founding Sponsors

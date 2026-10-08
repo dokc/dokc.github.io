@@ -27,7 +27,7 @@ Our founding sponsor MayaData; creators of the open-source project [OpenEBS](htt
 
 Many others feel similarly — DataStax, Confluent, Arista, Yugabyte, Optoro, 2nd Quadrant, and others have volunteered to participate in upcoming conversations and investigations.
 
-Please [fill out this simple form](https://forms.gle/v8oQ743JENCaZdn77) to get in touch with me about forming a part of the community.
+Please [fill out this simple form](/contribute/) to get in touch with me about forming a part of the community.
 
 **Relative links:**
 [Youtube channel](https://www.youtube.com/channel/UCUnXJbHQ89R2uSfKsqQwGvQ?view_as=subscriber)

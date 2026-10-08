@@ -69,6 +69,14 @@ summaryLength = 30
     youtube = 'https://www.youtube.com/@DoKcommunity'
     github = 'https://github.com/dokc'
     getStarted = 'https://github.com/dokc/Get-Started'
+    sponsor = 'mailto:sponsorships@dok.community?subject=DoK%202027%20sponsorship'
+    core = 'mailto:core@dok.community'
+    # Interim mailto links until the new forms exist; replace each with its form URL.
+    pilotsApply = 'mailto:contributors@dok.community?subject=DoK%20Pilots%20application'
+    nominate = 'mailto:contributors@dok.community?subject=Contributor%20nomination'
+    dockApply = 'mailto:contributors@dok.community?subject=Start%20a%20Dock'
+    eventSubmit = 'mailto:contributors@dok.community?subject=DoK%20meetup%20event'
+    speakerDatabase = 'mailto:contributors@dok.community?subject=DoK%20speaker%20database'
 
   [params.headerCTA]
     label = 'Join the Slack'
@@ -106,17 +114,34 @@ summaryLength = 30
   url = 'https://github.com/dokc/Get-Started'
   weight = 30
 [[menus.main]]
-  parent = 'learn'
-  name = 'Databases on K8s Whitepaper'
-  url = 'https://github.com/cncf/tag-storage/blob/master/data-on-kubernetes-whitepaper/data-on-kubernetes-whitepaper-databases.md'
-  weight = 40
-  [menus.main.params]
-    footer = false
-[[menus.main]]
   identifier = 'community'
   name = 'Community'
-  pageRef = '/community'
   weight = 20
+[[menus.main]]
+  parent = 'community'
+  name = 'Overview'
+  pageRef = '/community'
+  weight = 10
+[[menus.main]]
+  parent = 'community'
+  name = 'Contributor Program'
+  pageRef = '/contribute'
+  weight = 20
+[[menus.main]]
+  parent = 'community'
+  name = 'Contributors'
+  pageRef = '/contributors'
+  weight = 30
+[[menus.main]]
+  parent = 'community'
+  name = 'DoK Pilots'
+  pageRef = '/pilots'
+  weight = 40
+[[menus.main]]
+  parent = 'community'
+  name = 'Meetup Organizers'
+  pageRef = '/meetup-organizers'
+  weight = 50
 [[menus.main]]
   name = 'Events'
   pageRef = '/dok-events'
@@ -134,11 +159,6 @@ summaryLength = 30
   name = 'About Us'
   pageRef = '/about'
   weight = 10
-[[menus.main]]
-  parent = 'about'
-  name = 'Ambassadors'
-  pageRef = '/ambassadors'
-  weight = 20
 [[menus.main]]
   parent = 'about'
   name = 'Sponsors'

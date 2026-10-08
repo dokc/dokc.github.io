@@ -4,18 +4,22 @@ date: '2023-03-13T03:10:41Z'
 sections:
 - type: text
   content: |
+    In 2027, local DoK groups become **Docks**: city chapters with two organizers each, quarterly meetups, a meetup-in-a-box kit and funding support. See the [Contributor Program](/contribute/) for details.
+
     Organizing events for your local DoKC meetup is a rewarding experience and a great way of giving back to your local community while enhancing your own learning. Anyone can organize local DoK events so long as it meets two main requirements:
 
     1. Firstly, your group is focused on talking and learning about running data on Kubernetes.
     2. Secondly, your group is vendor-neutral and your talks are not merely vendor pitches. This doesn't mean you don't have sponsors or you don't mention any companies, but so long as your content is focused on the mutual learning of the local community then you're on the right track.
 
-    Recognised and supported groups will be listed on the meetup groups page and events will be listed on the upcoming events page. If you would like your group or event to be listed, please submit the details [in this form](https://docs.google.com/forms/d/e/1FAIpQLSesoxvGPLwi1Nq8Kspqm1MvH_Qr1WLhuOME2c8D7E6WUrXOyQ/viewform).
+    Recognised and supported groups will be listed on the meetup groups page and events will be listed on the upcoming events page. If you would like your group or event to be listed, please [send us the details](@eventSubmit).
 
     While those two requirements are all that is strictly required for a DoK meetup group to be formally recognised, the handbook below provides more detail and guidance for organizing meetup groups.
 
-    [**Submit your DoK group or event**](https://docs.google.com/forms/d/e/1FAIpQLSesoxvGPLwi1Nq8Kspqm1MvH_Qr1WLhuOME2c8D7E6WUrXOyQ/viewform)
+    [**Start a Dock**](@dockApply)
 
-    **[Join the speaker database](https://docs.google.com/forms/d/e/1FAIpQLScBAexz3mJ4nFt7hfSqMe20NTtnG9USyBOFBTa1MdkERNEfiw/viewform)**
+    [**Submit your DoK event**](@eventSubmit)
+
+    **[Join the speaker database](@speakerDatabase)**
 
     ---
 
@@ -41,7 +45,7 @@ sections:
   content: |
     ## Organizing DoK Events in an External Group
 
-    If you are an organizer for another meetup group that isn’t exclusively about DoK (a cloud native group, for example), and would like to organize DoK-related events within your existing meetup, then we would still love to promote your events to the DoK community. You can [submit your event details to us](https://docs.google.com/forms/d/e/1FAIpQLSesoxvGPLwi1Nq8Kspqm1MvH_Qr1WLhuOME2c8D7E6WUrXOyQ/viewform), and we will add them to the central events calendar.
+    If you are an organizer for another meetup group that isn’t exclusively about DoK (a cloud native group, for example), and would like to organize DoK-related events within your existing meetup, then we would still love to promote your events to the DoK community. You can [submit your event details to us](@eventSubmit), and we will add them to the central events calendar.
   ratio: third
 - type: split
   content: |

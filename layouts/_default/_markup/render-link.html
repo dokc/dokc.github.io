@@ -1,8 +1,9 @@
-{{- /* Markdown links: bundle files resolve to their published URL; external links open in a new tab. */ -}}
-{{- $u := urls.Parse .Destination -}}
+{{- /* Markdown links: "@key" resolves via params.links; bundle files resolve to their published URL; external links open in a new tab. */ -}}
 {{- $href := .Destination -}}
-{{- if and (not $u.IsAbs) (not (hasPrefix .Destination "/")) (not (hasPrefix .Destination "#")) (not (hasPrefix .Destination "mailto:")) -}}
+{{- if hasPrefix $href "@" }}{{ $href = partial "link-url.html" $href }}{{ end -}}
+{{- $u := urls.Parse $href -}}
+{{- if and (not $u.IsAbs) (not (hasPrefix $href "/")) (not (hasPrefix $href "#")) (not (hasPrefix $href "mailto:")) -}}
   {{- with .Page.Resources.Get $u.Path }}{{ $href = .RelPermalink }}{{ end -}}
 {{- end -}}
 {{- $external := and $u.IsAbs (ne $u.Host "dok.community") (in (slice "http" "https") $u.Scheme) -}}
-<a href="{{ $href | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if $external }} target="_blank" rel="noopener"{{ end }}>{{ .Text | safeHTML }}</a>
+<a href="{{ $href | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if $external }} target="_blank" rel="noopener"{{ end }}>{{ .Text | safeHTML }}</a>{{- /* No trailing newline: it renders as a space before punctuation. */ -}}

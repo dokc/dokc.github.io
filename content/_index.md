@@ -38,11 +38,11 @@ sections:
           url: "/dok-events/"
       - style: violet
         size: wide
-        label: "Ambassadors"
-        title: "Meet the people who keep the community running."
+        label: "Contributor Program · 2027"
+        title: "Fifteen minutes is enough to start."
         button:
-          label: "Meet the ambassadors"
-          url: "/ambassadors/"
+          label: "Start contributing"
+          url: "/contribute/"
 
   - type: text
     align: center
@@ -94,8 +94,8 @@ sections:
     label: "Founding sponsors"
     title: "Back the community"
     emptyTitle: "We're looking for founding sponsors."
-    emptyText: "Sponsors keep DoK Days, town halls and the annual report free for everyone. Become one of the first."
+    emptyText: "Sponsors keep DoK Days, town halls and the annual report free for everyone. Founding sponsor places close 31 January 2027."
     button:
-      label: "Become a sponsor"
+      label: "Become a founding sponsor"
       url: "/join/"
 ---

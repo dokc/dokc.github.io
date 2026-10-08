@@ -16,14 +16,39 @@
       d.querySelector('[data-dropdown-toggle]').setAttribute('aria-expanded', 'false');
     });
   }
+  var hoverable = window.matchMedia('(hover: hover) and (min-width: 1024px)');
   dropdowns.forEach(function (d) {
     var btn = d.querySelector('[data-dropdown-toggle]');
     var menu = d.querySelector('[data-dropdown-menu]');
+    var closeTimer;
+    var hoverOpened = false;
+    function setOpen(open) {
+      menu.classList.toggle('hidden', !open);
+      btn.setAttribute('aria-expanded', String(open));
+    }
     btn.addEventListener('click', function (e) {
       e.stopPropagation();
       closeAll(d);
-      var open = menu.classList.toggle('hidden') === false;
-      btn.setAttribute('aria-expanded', String(open));
+      // A click right after a hover-open keeps the menu open instead of closing it.
+      setOpen(hoverOpened || menu.classList.contains('hidden'));
+      hoverOpened = false;
+    });
+    d.addEventListener('mouseenter', function () {
+      if (!hoverable.matches) return;
+      clearTimeout(closeTimer);
+      if (menu.classList.contains('hidden')) {
+        closeAll(d);
+        setOpen(true);
+        hoverOpened = true;
+      }
+    });
+    d.addEventListener('mouseleave', function () {
+      if (!hoverable.matches) return;
+      // Delay bridges the gap between the button and the menu panel.
+      closeTimer = setTimeout(function () {
+        setOpen(false);
+        hoverOpened = false;
+      }, 200);
     });
   });
   document.addEventListener('click', function (e) {

@@ -46,7 +46,7 @@ Ultimately, the presentation explains how you can schedule large scale Apache Sp
 
 To catch an upcoming Town Hall, check out our [Meetup page](https://www.meetup.com/data-on-kubernetes-community/events/).
 
-[Let us know](https://forms.gle/ajhbb998SD47yr5i6) if you’re interested in sharing a case study or use case with the community.
+[Let us know](/contribute/) if you’re interested in sharing a case study or use case with the community.
 
 **Data on Kubernetes Community**
 

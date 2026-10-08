@@ -53,13 +53,15 @@ sections:
     url: https://join.slack.com/t/dokcommunity/shared_invite/zt-2a0ahuhsh-MdZ4OpF4nr_s4kyOwTurVw
 - type: split
   content: |
-    ## Ambassador Program
+    ## Contributor Program
 
-    DoK Ambassadors are here to help you navigate the community and find DoK resources. Look for them on the DoK Slack channel or reach out to them using links in their bio.
+    Code is one contribution among many. Answer a question in #help, test a pattern, run a local Dock or become a DoK Pilot. Every credited contribution counts, and recognized contributors are listed publicly.
   ratio: third
   buttons:
-  - label: Meet the Ambassadors
-    url: /ambassadors/
+  - label: Start contributing
+    url: /contribute/
+  - label: Become a Pilot
+    url: /pilots/
 - type: split
   content: |
     ## Working Groups

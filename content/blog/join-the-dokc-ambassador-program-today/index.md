@@ -25,10 +25,8 @@ Here are some of the reasons to become a DoKC Ambassador:
 
 **💡 Shape the Future:** Participate in strategic discussions and initiatives that influence the direction and development of the DoK Community.
 
-We invite all passionate community members to [apply for the DoKC Ambassador Program](https://docs.google.com/forms/d/e/1FAIpQLSfD30IKT77gxu8w5wPEXCEuc2uf7HyMH24QL6dudwLM-eZARg/viewform). Whether you're an experienced practitioner, a regular contributor, or a budding enthusiast, your unique perspective and dedication are invaluable to our community's growth.
+We invite all passionate community members to [apply for the DoKC Ambassador Program](/pilots/). Whether you're an experienced practitioner, a regular contributor, or a budding enthusiast, your unique perspective and dedication are invaluable to our community's growth.
 
 DoKC is a vibrant community of individuals who harness the power of Kubernetes for data workloads. As an open source community, we believe in recognising and empowering members who contribute to the growth and success of our community. Together, let's help grow the DoKC and advance the conversation around data on Kubernetes.
 
-[Meet the Ambassadors](/ambassadors/)
-
-[Apply to become an Ambassador](https://docs.google.com/forms/u/1/d/e/1FAIpQLSfD30IKT77gxu8w5wPEXCEuc2uf7HyMH24QL6dudwLM-eZARg/viewform)
+*The Ambassador Program is now DoK Pilots.* [Apply to be a Pilot](/pilots/)

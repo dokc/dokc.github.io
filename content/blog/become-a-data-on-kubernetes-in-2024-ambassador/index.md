@@ -39,4 +39,4 @@ As a DoK Ambassador, we do expect that you will first and foremost abide by the 
 
 To apply, you just have to fill out a form and tell us about yourself. Be as descriptive as possible. The more we know, the better we can evaluate your application. Don’t be afraid to brag about yourself.
 
-[Apply Now](https://forms.gle/UYysiCrNMVxWCgEb8)
+*The Ambassador Program is now DoK Pilots.* [Apply to be a Pilot](/pilots/)
