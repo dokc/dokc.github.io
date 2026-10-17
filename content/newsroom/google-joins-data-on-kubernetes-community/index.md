@@ -27,7 +27,7 @@ For more information on how to join DoKC, please see [https://dok.community/join
 **Additional Resources**
 
 - [Read the 2022 Data on Kubernetes Report](https://cts.businesswire.com/ct/CT?id=smartlink&url=https%3A%2F%2Fdok.community%2Fdata-on-kubernetes-2022-report%2F&esheet=53367155&newsitemid=20230327005049&lan=en-US&anchor=Read+the+2022+Data+on+Kubernetes+Report&index=6&md5=9f21b9eaa2770b4a0131d8cc7b0e8b54)
-- [Join the community on Slack](https://cts.businesswire.com/ct/CT?id=smartlink&url=https%3A%2F%2Fgo.dok.community%2Fslack&esheet=53367155&newsitemid=20230327005049&lan=en-US&anchor=Join+the+community+on+Slack&index=7&md5=a88bfbbc02ae09823320f8672852bd1f)
+- [Join the community on Slack](@slack)
 - [Become a sponsor](https://cts.businesswire.com/ct/CT?id=smartlink&url=https%3A%2F%2Fdok.community%2Fjoin%2F&esheet=53367155&newsitemid=20230327005049&lan=en-US&anchor=Become+a+sponsor&index=8&md5=a29fae6163872a8d2a41fd83b4f696a8)
 - [Attend a live stream](https://cts.businesswire.com/ct/CT?id=smartlink&url=https%3A%2F%2Fwww.meetup.com%2FData-on-Kubernetes-community%2Fevents%2F&esheet=53367155&newsitemid=20230327005049&lan=en-US&anchor=Attend+a+live+stream&index=9&md5=4aa701d3541505d16afc693395c330a5)
 - [View DoK playlists](https://cts.businesswire.com/ct/CT?id=smartlink&url=https%3A%2F%2Fwww.youtube.com%2Fchannel%2FUCUnXJbHQ89R2uSfKsqQwGvQ%2Fplaylists&esheet=53367155&newsitemid=20230327005049&lan=en-US&anchor=View+DoK+playlists&index=10&md5=c154edc444afe75e34f2dd3d06530772)

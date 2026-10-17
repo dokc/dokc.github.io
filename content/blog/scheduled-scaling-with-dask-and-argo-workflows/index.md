@@ -108,7 +108,7 @@ My real first name is so my [GitHub](https://github.com/sevberg) is going to be 
 
 **Bart Farrell** 1:03:42
 
-There you got the email, GitHub, LinkedIn as well. Also the [DoK community in Slack](https://go.dok.community/slack). So I'm sure for folks that are watching this if you want to take the conversation a bit further, feel free to jump in. As I've said, we've had other talks around this, we've never had to talk about this match up with Dask. And taking a look at the way that you did. Also very nice to see from an end-user perspective, that's nice to see that too, also seeing your background in looking at renewable energies. That's probably a conversation we could take further. But I appreciate having you here.
+There you got the email, GitHub, LinkedIn as well. Also the [DoK community in Slack](@slack). So I'm sure for folks that are watching this if you want to take the conversation a bit further, feel free to jump in. As I've said, we've had other talks around this, we've never had to talk about this match up with Dask. And taking a look at the way that you did. Also very nice to see from an end-user perspective, that's nice to see that too, also seeing your background in looking at renewable energies. That's probably a conversation we could take further. But I appreciate having you here.
 
 **Severin Ryberg** 1:04:23
 

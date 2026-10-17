@@ -19,5 +19,5 @@ We decided to start this project based on a need that we witnessed. End-users wa
 
 The landscape includes Database Data Management, Operators, Logging, Streaming, and Messaging.  To help end-users navigate the landscape, the entries are documented with metadata such as is there an operator or kubectl plugin for it? Is it OSS? Does it have commercial support? And more, to help end-users pick the right tool or service for running their stateful workloads on Kubernetes.
 
-And the best part is that it’s just the beginning. We will continuously improve the [landscape](/landscape/) by adding more features and data. As usual, if you have any ideas or feedback, please reach out to us on [Slack](https://go.dok.community/slack)!
+And the best part is that it’s just the beginning. We will continuously improve the [landscape](/landscape/) by adding more features and data. As usual, if you have any ideas or feedback, please reach out to us on [Slack](@slack)!
 > The DoK Landscape is a destination for end-users to research existing Data on Kubernetes products, solutions, and consultancies.<https://t.co/kzrGLB36du> [pic.twitter.com/StV5aoyAwn](https://t.co/StV5aoyAwn)— Data on Kubernetes Community (@DoKcommunity) [May 16, 2022](https://twitter.com/DoKcommunity/status/1526102699518861317?ref_src=twsrc%5Etfw)

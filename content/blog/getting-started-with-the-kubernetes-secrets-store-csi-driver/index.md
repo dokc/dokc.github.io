@@ -304,7 +304,7 @@ I think many people would agree with the vastness of Kubernetes and the CNCF, ju
 
 **Kim Schlesinger** 50:38
 
-Can I get a plug for you? So first of all, the community's really cool. You have an active [Slack](https://dokcommunity.slack.com/join/shared_invite/zt-10v7uncvp-jNFwulsVWvUO0SKMDTjwAw#/shared-invite/email) workspace that I appreciate. The amount of content that you are shepherding into the world is impressive. I think he did three talks this week.
+Can I get a plug for you? So first of all, the community's really cool. You have an active [Slack](@slack) workspace that I appreciate. The amount of content that you are shepherding into the world is impressive. I think he did three talks this week.
 
 **Bart Farrell** 50:56
 

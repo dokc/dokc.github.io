@@ -17,7 +17,7 @@ We are back at it again! As Kubecon Europe 2022 is quickly approaching, [we are 
 
 We’re looking for vendor-neutral talks from practitioners that describe the use cases, techniques, and best practices for running data on Kubernetes. In addition, we will be looking for submissions from underrepresented and marginalized groups and will not accept submissions with all-male panels.
 
-Not sure what topic to pitch? Get inspired by watching some of the [previous DoK Talks](/blog/category/dok-day-kubecon-na-2021/), and feel free to brainstorm with us by joining [our Slack](https://go.dok.community/slack)!
+Not sure what topic to pitch? Get inspired by watching some of the [previous DoK Talks](/blog/category/dok-day-kubecon-na-2021/), and feel free to brainstorm with us by joining [our Slack](@slack)!
 
 We invite you to submit talk proposals about:
 

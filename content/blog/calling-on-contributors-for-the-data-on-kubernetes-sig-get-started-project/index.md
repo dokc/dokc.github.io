@@ -31,4 +31,4 @@ We need your expertise to make this project a success! Here's how you can contri
 
 Your diverse knowledge and experience will help create a unique resource for the Data on Kubernetes community.
 
-Ready to get involved? [Join the DoK Slack here](https://join.slack.com/t/dokcommunity/shared_invite/zt-2a0ahuhsh-MdZ4OpF4nr_s4kyOwTurVw) and start contributing today!
+Ready to get involved? [Join the DoK Slack here](@slack) and start contributing today!

@@ -61,4 +61,4 @@ DataOps/BA roles research and define the tools used to help them make their job 
 
 Big Thanks to Rick, Brian, Dean, Mike and Dave for helping me see the differences here.
 
-[Join us in slack](https://join.slack.com/t/dokcommunity/shared_invite/zt-g3ui5r0g-jDKz5dhh2W1ayElqwKYYAg) to talk about these kinds of themes and so much more! Also, feel free to drop into our [weekly Tuesday meetups](https://go.dok.community/register) or catch the replays on [youtube](https://www.youtube.com/channel/UCUnXJbHQ89R2uSfKsqQwGvQ?view_as=subscriber) or in [podcast land](https://anchor.fm/demetrios6).
+[Join us in slack](@slack) to talk about these kinds of themes and so much more! Also, feel free to drop into our [weekly Tuesday meetups](https://go.dok.community/register) or catch the replays on [youtube](https://www.youtube.com/channel/UCUnXJbHQ89R2uSfKsqQwGvQ?view_as=subscriber) or in [podcast land](https://anchor.fm/demetrios6).

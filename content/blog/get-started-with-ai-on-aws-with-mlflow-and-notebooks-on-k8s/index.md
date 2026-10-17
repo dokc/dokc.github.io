@@ -40,10 +40,10 @@ By the end of this workshop, you’ll be able to run an end-to-end project using
 
 [Let us know](/contribute/) if you’re interested in sharing a case study or use case with the community.
 
-**Data on Kubernetes Community**[Website](/) | [Slack](https://dokcommunity.slack.com/) | [LinkedIn](https://www.linkedin.com/company/data-on-kubernetes-community/) | [YouTube](https://www.youtube.com/channel/UCUnXJbHQ89R2uSfKsqQwGvQ) | [Twitter](https://twitter.com/DoKcommunity) | [Meetups](https://www.meetup.com/data-on-kubernetes-community/)
+**Data on Kubernetes Community**[Website](/) | [Slack](@slack) | [LinkedIn](https://www.linkedin.com/company/data-on-kubernetes-community/) | [YouTube](https://www.youtube.com/channel/UCUnXJbHQ89R2uSfKsqQwGvQ) | [Twitter](https://twitter.com/DoKcommunity) | [Meetups](https://www.meetup.com/data-on-kubernetes-community/)
 
 **Operator SIG**
-#sig-operator on [Slack](https://dokcommunity.slack.com/) | Meets every other Tuesday
+#sig-operator on [Slack](@slack) | Meets every other Tuesday
 
 **Transcript**Speaker 1 (00:00):
 Hello everyone. Welcome to the October Town Hall for the data on Kubernetes community. My name is Hugh. I'm community here at DK Data on Kubernetes and this is Monthly town hall. We do this time every month and yeah, great to be with you all today. We've got a great workshop, a very practical workshop today lined up, which is going to be fantastic. I'm looking forward to that. Before we get into it, I just have a few community announcements and things to share, so I'm just going to share a couple things with you quickly. Okay, cool. So DK community.

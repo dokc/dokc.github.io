@@ -26,7 +26,7 @@ MayaData's CEO Donald Williams said: "Deploying stateful apps on Kubernetes is a
 
 Portworx by Pure Storage's Umair Mufti, director of product management for Portworx Data Services, said, “Portworx by Pure Storage helps the Global 2000 make their data services scalable, available, and secure on Kubernetes. GigaOm Research recently named Portworx as the ‘gold standard’ for cloud-native Kubernetes storage for the enterprise. We see a bright future for even more data to be run on Kubernetes and are delighted to join the Data on Kubernetes Community to bring more industry-wide solutions to the forefront.”
 
-Register for the second virtual [Data on Kubernetes Day](/dok-events/) at KubeCon + CloudNativeCon North America on October 12, 2021 and [join the conversation on Slack](https://join.slack.com/t/dokcommunity/shared_invite/zt-g3ui5r0g-jDKz5dhh2W1ayElqwKYYAg).
+Register for the second virtual [Data on Kubernetes Day](/dok-events/) at KubeCon + CloudNativeCon North America on October 12, 2021 and [join the conversation on Slack](@slack).
 
 **About Data on Kubernetes Community (DoKC)**
 

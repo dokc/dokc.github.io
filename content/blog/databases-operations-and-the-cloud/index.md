@@ -166,4 +166,4 @@ Nothing special; we’re here if you’re interested in having more conversation
 
 **Bart Farrell** 50:51
 
-Good to know! Once again, thank you very much, Barak, and to everybody who joined! We can always continue the conversation on [Slack](https://dokcommunity.slack.com/join/shared_invite/zt-10v7uncvp-jNFwulsVWvUO0SKMDTjwAw#/shared-invite/email) if you have any questions or comments.
+Good to know! Once again, thank you very much, Barak, and to everybody who joined! We can always continue the conversation on [Slack](@slack) if you have any questions or comments.

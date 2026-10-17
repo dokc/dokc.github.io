@@ -64,7 +64,7 @@ summaryLength = 30
 
   # Shared external links. Reference them from content as "@slack", "@meetup", etc.
   [params.links]
-    slack = 'https://join.slack.com/t/dokcommunity/shared_invite/zt-2a0ahuhsh-MdZ4OpF4nr_s4kyOwTurVw'
+    slack = 'https://join.slack.com/t/dokcommunity/shared_invite/zt-4djtj1cwk-Z3iYonK9dFRN28QVpgQPqA'
     meetup = 'https://www.meetup.com/data-on-kubernetes-community/'
     youtube = 'https://www.youtube.com/@DoKcommunity'
     github = 'https://github.com/dokc'

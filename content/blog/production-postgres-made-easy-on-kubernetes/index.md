@@ -28,7 +28,7 @@ Jonathan explains how using simple manifests, PGO deploys HA Postgres clusters w
 
 **Bart Farrell** 00:00
 
-Welcome to live stream number 112 of the Data on Kubernetes community. Before we get started, as usual, check us out on [Twitter](https://twitter.com/DoKcommunity), [LinkedIn](https://www.linkedin.com/company/data-on-kubernetes-community/), subscribe to our [YouTube](https://www.youtube.com/channel/UCUnXJbHQ89R2uSfKsqQwGvQ) channel, jump in on [Slack](https://go.dok.community/slack), we have plenty of things going on. Jonathan, welcome to the Data on Kubernetes Community. Can you just give us a little bit about your experience? How did you get started with Postgres and [Kubernetes](https://kubernetes.io/)?
+Welcome to live stream number 112 of the Data on Kubernetes community. Before we get started, as usual, check us out on [Twitter](https://twitter.com/DoKcommunity), [LinkedIn](https://www.linkedin.com/company/data-on-kubernetes-community/), subscribe to our [YouTube](https://www.youtube.com/channel/UCUnXJbHQ89R2uSfKsqQwGvQ) channel, jump in on [Slack](@slack), we have plenty of things going on. Jonathan, welcome to the Data on Kubernetes Community. Can you just give us a little bit about your experience? How did you get started with Postgres and [Kubernetes](https://kubernetes.io/)?
 
 **Jonathan Katz** 01:48
 

@@ -42,7 +42,7 @@ Thank you to DoK Day sponsors [anynines](https://cts.businesswire.com/ct/CT?id=s
 **Additional Resources**
 
 - [Read the 2021 Data on Kubernetes Report](https://cts.businesswire.com/ct/CT?id=smartlink&url=https%3A%2F%2Fdok.community%2Fdokc-2021-report%2F&esheet=52924528&newsitemid=20220923005494&lan=en-US&anchor=Read+the+2021+Data+on+Kubernetes+Report&index=11&md5=81f4945144bcd35a9721a42a800cff76)
-- [Join the community on Slack](https://cts.businesswire.com/ct/CT?id=smartlink&url=https%3A%2F%2Fgo.dok.community%2Fslack&esheet=52924528&newsitemid=20220923005494&lan=en-US&anchor=Join+the+community+on+Slack&index=12&md5=77cc72dc8125505d0ea8a0b73bae8fb9)
+- [Join the community on Slack](@slack)
 - [Become a sponsor](https://cts.businesswire.com/ct/CT?id=smartlink&url=https%3A%2F%2Fdok.community%2Fjoin%2F&esheet=52924528&newsitemid=20220923005494&lan=en-US&anchor=Become+a+sponsor&index=13&md5=2370f7ac867c6d8e781187fc0af4bdb4)
 - [Attend a live stream](https://cts.businesswire.com/ct/CT?id=smartlink&url=https%3A%2F%2Fwww.meetup.com%2FData-on-Kubernetes-community%2Fevents%2F&esheet=52924528&newsitemid=20220923005494&lan=en-US&anchor=Attend+a+live+stream&index=14&md5=23b3d79fbf06df46fd72dd883f925667)
 - [View DoK playlists](https://cts.businesswire.com/ct/CT?id=smartlink&url=https%3A%2F%2Fwww.youtube.com%2Fchannel%2FUCUnXJbHQ89R2uSfKsqQwGvQ%2Fplaylists&esheet=52924528&newsitemid=20220923005494&lan=en-US&anchor=View+DoK+playlists&index=15&md5=424334435c92bc0c9dd4d21875099ead)

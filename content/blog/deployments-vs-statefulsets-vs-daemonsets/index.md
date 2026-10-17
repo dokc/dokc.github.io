@@ -251,7 +251,7 @@ Not at the moment.
 
 **Bart Farrell:**
 
-Feel free if you want to continue the conversation in our [Slack](https://join.slack.com/t/dokcommunity/shared_invite/zt-g3ui5r0g-jDKz5dhh2W1ayElqwKYYAg). You can also check us out on [Twitter](https://twitter.com/dokcommunity). We're also on [LinkedIn](https://www.linkedin.com/company/data-on-kubernetes-community/), constantly sharing stuff. We will be happy to answer all your questions in slack as well. We have another meetup coming up this week, we have plenty of things going on. This was a very informative [meetup](https://youtu.be/7Tnm9hRyoYU). And this is another reminder to all the folks that are out there, this is a perfect example of what we're going for as a vendor neutral community. It's very difficult sometimes to say like these are the kind of talks that we're looking for. “Corporate slide decks”, that's not what we're looking for.
+Feel free if you want to continue the conversation in our [Slack](@slack). You can also check us out on [Twitter](https://twitter.com/dokcommunity). We're also on [LinkedIn](https://www.linkedin.com/company/data-on-kubernetes-community/), constantly sharing stuff. We will be happy to answer all your questions in slack as well. We have another meetup coming up this week, we have plenty of things going on. This was a very informative [meetup](https://youtu.be/7Tnm9hRyoYU). And this is another reminder to all the folks that are out there, this is a perfect example of what we're going for as a vendor neutral community. It's very difficult sometimes to say like these are the kind of talks that we're looking for. “Corporate slide decks”, that's not what we're looking for.
 
 **Bart Farrell:**
 

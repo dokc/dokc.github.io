@@ -31,7 +31,7 @@ Pre-registration for Dok Day is required. To [register](https://cvent.me/KWgYkd?
 **Additional Resources**
 
 - [Read the 2021 Data on Kubernetes Report](/dokc-2021-report/)
-- [Join the community on Slack](https://go.dok.community/slack)
+- [Join the community on Slack](@slack)
 - [Become a sponsor](/join/)
 - [Attend a live stream](https://www.meetup.com/Data-on-Kubernetes-community/events/)
 - [View DoK playlists](https://www.youtube.com/channel/UCUnXJbHQ89R2uSfKsqQwGvQ/playlists)

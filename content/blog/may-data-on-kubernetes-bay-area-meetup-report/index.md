@@ -20,4 +20,4 @@ Arul Jegadish of Opsverse gave the final talk on [Operating Data On K8s for a Cl
 
 After presentations concluded, we spent an hour learning about each others’ Kubernetes projects and sharing ideas. Major thanks are due to the speakers, sponsors (Altinity and Avesha), and of course everyone who attended.
 
-We’ll be scheduling the next DoK Bay Area meetup soon. If you have a talk you would like to present or a venue you can offer, please message either Robert Hodges or Lisa-Marie Namphy on the [DoK Slack Workspace](https://join.slack.com/t/dokcommunity/shared_invite/zt-1vgv7ymz7-YtLFvZicrcLP9fS3o_r2_w). Or you can send a message to us on [Meetup](https://www.meetup.com/bay-area-data-on-kubernetes-community/). We hope to see you at the next meeting!
+We’ll be scheduling the next DoK Bay Area meetup soon. If you have a talk you would like to present or a venue you can offer, please message either Robert Hodges or Lisa-Marie Namphy on the [DoK Slack Workspace](@slack). Or you can send a message to us on [Meetup](https://www.meetup.com/bay-area-data-on-kubernetes-community/). We hope to see you at the next meeting!

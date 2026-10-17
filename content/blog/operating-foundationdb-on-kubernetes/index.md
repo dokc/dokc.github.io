@@ -52,4 +52,4 @@ And we are always looking for better support for multi-cluster workloads. Other 
 
 In addition to that, we want to implement more features for backup and restore. So currently, we have basic support for backup and restore. But we want to have more features for that. And you can probably find more of all of that in the GitHub issues of the FoundationDB operator. And we also want to make use of the Management API. That is something FoundationDB-specific that was added in 7.0, and the idea is that we don't have to call any external binaries because that gets pretty tricky in memory handling if you call another process from your operator. And it's much easier to just have a library that can directly be called.
 
-That's it. If you have any questions, feel free to ping me in the [DoK slack](https://go.dok.community/slack). And yeah, thanks for listening
+That's it. If you have any questions, feel free to ping me in the [DoK slack](@slack). And yeah, thanks for listening

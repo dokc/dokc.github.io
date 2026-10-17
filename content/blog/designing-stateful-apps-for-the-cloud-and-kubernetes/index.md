@@ -24,7 +24,7 @@ In this talk, Evan shares how Kubernetes is shaking up stateful app design. What
 
 **Bart Farrell** 00:13
 
-Welcome, everyone to another meetup of the Data on Kubernetes community. My name is [Bart Farrell](https://www.linkedin.com/in/bart-farrell/). If you are new to the community, you can always check us out on [Slack](https://go.dok.community/slack). You can check us out on [Twitter](https://twitter.com/DoKcommunity/) and [LinkedIn](https://www.linkedin.com/company/data-on-kubernetes-community/). We are going to be talking about working with stateful workloads and stateful applications in a [Cloud Native](https://www.cncf.io/) environment with Evan today. That being said, Evan Chan, who are you?
+Welcome, everyone to another meetup of the Data on Kubernetes community. My name is [Bart Farrell](https://www.linkedin.com/in/bart-farrell/). If you are new to the community, you can always check us out on [Slack](@slack). You can check us out on [Twitter](https://twitter.com/DoKcommunity/) and [LinkedIn](https://www.linkedin.com/company/data-on-kubernetes-community/). We are going to be talking about working with stateful workloads and stateful applications in a [Cloud Native](https://www.cncf.io/) environment with Evan today. That being said, Evan Chan, who are you?
 
 **Evan Chan** 02:19
 
