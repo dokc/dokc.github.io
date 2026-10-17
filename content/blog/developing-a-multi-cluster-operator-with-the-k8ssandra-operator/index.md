@@ -144,7 +144,7 @@ Very good point. With that, can you stop sharing your screen quickly just becaus
 
 **John Sanda** 1:01:36
 
-Yes. I'm on Twitter, not super active. Twitter, LinkedIn and I'm on [Dok Slack](https://go.dok.community/slack) now, the [K8ssandra discord](https://discord.gg/qP5tAt6Uwt). I didn't put that info; I'll drop it in on Slack.
+Yes. I'm on Twitter, not super active. Twitter, LinkedIn and I'm on [Dok Slack](@slack) now, the [K8ssandra discord](https://discord.gg/qP5tAt6Uwt). I didn't put that info; I'll drop it in on Slack.
 
 **Bart Farrell** 1:01:55
 

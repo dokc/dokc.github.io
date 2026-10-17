@@ -26,7 +26,7 @@ On Tuesday, April 18, financial platform company [Adyen](https://www.adyen.com/)
 
 On Thursday, the DoKC and CNCF Storage TAG hosted a panel about the Kubernetes operator landscape (watch the replay [here](https://youtu.be/TmDdkBPW_hI)). The DoKC had a lot to contribute to this conversation. Our 2022 DoK annual [survey](/data-on-kubernetes-2022-report/) showed us that Day 2 operations are one of the biggest challenges faced by DoK users.
 
-From this feedback, we created the DoK Operator SIG at the end of 2022 (#sig-operator on DoK [Slack](http://dokcommunity.slack.com)). With the SIG, we bring the industry together to discuss solutions to common end user challenges. Our work through the DoK Operator SIG allowed us to share some valuable insights during the panel.
+From this feedback, we created the DoK Operator SIG at the end of 2022 (#sig-operator on DoK [Slack](@slack)). With the SIG, we bring the industry together to discuss solutions to common end user challenges. Our work through the DoK Operator SIG allowed us to share some valuable insights during the panel.
 
 We discussed the following topics:
 
@@ -63,11 +63,11 @@ KubeCon was abuzz with DoK-related conversations. Thanks to everyone who made th
 
 **Data on Kubernetes Community**
 
-[Website](/) | [Slack](http://dokcommunity.slack.com) | [LinkedIn](https://www.linkedin.com/company/data-on-kubernetes-community/) | [YouTube](https://www.youtube.com/channel/UCUnXJbHQ89R2uSfKsqQwGvQ) | [Twitter](https://twitter.com/DoKcommunity)
+[Website](/) | [Slack](@slack) | [LinkedIn](https://www.linkedin.com/company/data-on-kubernetes-community/) | [YouTube](https://www.youtube.com/channel/UCUnXJbHQ89R2uSfKsqQwGvQ) | [Twitter](https://twitter.com/DoKcommunity)
 
 **Operator SIG**
 
-#sig-operator on [Slack](http://dokcommunity.slack.com) | Meets every other Tuesday
+#sig-operator on [Slack](@slack) | Meets every other Tuesday
 
 **Bay Area Meetup**
 

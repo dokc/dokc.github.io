@@ -30,4 +30,4 @@ This shift reflects DoK's commitment to a governance model that mirrors the comm
 - **31 January 2027:** founding sponsorship closes. [Become a founding sponsor](/join/).
 - **KubeCon EU 2027:** the public relaunch of DoK and the seating of the first steering committee.
 
-For more information about the Data on Kubernetes Community or this transition, visit [dok.community](/), join the [DoK Slack](https://join.slack.com/t/dokcommunity/shared_invite/zt-2a0ahuhsh-MdZ4OpF4nr_s4kyOwTurVw), or contact [dok@solanica.io](mailto:dok@solanica.io).
+For more information about the Data on Kubernetes Community or this transition, visit [dok.community](/), join the [DoK Slack](@slack), or contact [dok@solanica.io](mailto:dok@solanica.io).

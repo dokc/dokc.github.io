@@ -31,7 +31,7 @@ Please [fill out this simple form](/contribute/) to get in touch with me about f
 
 **Relative links:**
 [Youtube channel](https://www.youtube.com/channel/UCUnXJbHQ89R2uSfKsqQwGvQ?view_as=subscriber)
-The [DoK.community Slack](https://join.slack.com/t/dokcommunity/shared_invite/zt-g3ui5r0g-jDKz5dhh2W1ayElqwKYYAg)
+The [DoK.community Slack](@slack)
 Twitter: [@DoKcommunity](https://twitter.com/DoKcommunity)
 [Website](/)
 [Meetup.com page](https://www.meetup.com/Data-on-Kubernetes-community/)

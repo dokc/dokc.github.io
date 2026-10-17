@@ -29,7 +29,7 @@ As organizations see the benefits of DoK, the community continues to grow.  The 
 **Additional Resources**
 
 - [Read the 2022 Data on Kubernetes Report](/data-on-kubernetes-2022-report/)
-- [Join the community on Slack](https://go.dok.community/slack)
+- [Join the community on Slack](@slack)
 - [Attend a live stream](https://www.meetup.com/Data-on-Kubernetes-community/events/)
 - [View DoK playlists](https://www.youtube.com/channel/UCUnXJbHQ89R2uSfKsqQwGvQ/playlists)
 

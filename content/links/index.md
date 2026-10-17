@@ -10,7 +10,7 @@ links:
 - label: DoK Get Started Project
   url: https://github.com/dokc/Get-Started
 - label: Join DoK Slack Group
-  url: https://join.slack.com/t/dokcommunity/shared_invite/zt-2a0ahuhsh-MdZ4OpF4nr_s4kyOwTurVw
+  url: "@slack"
 - label: DoK Meetup Group
   url: https://www.meetup.com/data-on-kubernetes-community/
 - label: DoK YouTube Channel

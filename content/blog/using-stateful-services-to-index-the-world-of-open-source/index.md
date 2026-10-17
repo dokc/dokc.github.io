@@ -35,7 +35,7 @@ Let me give you this great overview of how we run stateful data at Sourceraph.
 
 **Bart Farrell** 00:33
 
-Just a reminder, folks, you can leave comments and questions in the [YouTube](https://www.youtube.com/channel/UCUnXJbHQ89R2uSfKsqQwGvQ) chat. But also, if you really want to continue the conversation afterward with the speakers jump in our [Slack](https://go.dok.community/slack). And that's where you can have more direct interaction.
+Just a reminder, folks, you can leave comments and questions in the [YouTube](https://www.youtube.com/channel/UCUnXJbHQ89R2uSfKsqQwGvQ) chat. But also, if you really want to continue the conversation afterward with the speakers jump in our [Slack](@slack). And that's where you can have more direct interaction.
 
 **Dax McDonald** 00:47
 

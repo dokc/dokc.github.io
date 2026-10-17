@@ -1,0 +1,15 @@
+{{- /* Client-side redirect for short links like /slack (GitHub Pages has no server redirects). Front matter: redirect ("@key", "/path" or URL). */ -}}
+{{- $url := partial "link-url.html" .Params.redirect -}}
+<!DOCTYPE html>
+<html lang="{{ site.LanguageCode }}">
+<head>
+<title>{{ .Title }}</title>
+<link rel="canonical" href="{{ $url }}">
+<meta name="robots" content="noindex">
+<meta charset="utf-8">
+<meta http-equiv="refresh" content="0; url={{ $url }}">
+</head>
+<body>
+<p>Redirecting to <a href="{{ $url }}">{{ $url }}</a>…</p>
+</body>
+</html>

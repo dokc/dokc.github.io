@@ -43,8 +43,6 @@ The idea behind YuniKorn was to be able to run workloads with a limited number o
   - Source code releases:<https://yunikorn.apache.org/community/download/>
   - Docker images:<https://hub.docker.com/r/apache/yunikorn>
   - Helm chart:<https://artifacthub.io/packages/helm/yunikorn/yunikorn>
-- Social Channels
-  - Slack:<https://yunikornworkspace.slack.com/>
 - How to get in touch / CTA
   - Overview:<https://yunikorn.apache.org/community/get_involved>
   - Email list: dev@yunikorn.apache.org
@@ -52,8 +50,8 @@ The idea behind YuniKorn was to be able to run workloads with a limited number o
 
 **Data on Kubernetes Community**
 
-[Website](/) | [Slack](https://dokcommunity.slack.com/) | [LinkedIn](https://www.linkedin.com/company/data-on-kubernetes-community/) | [YouTube](https://www.youtube.com/channel/UCUnXJbHQ89R2uSfKsqQwGvQ) | [Twitter](https://twitter.com/DoKcommunity) | [Meetups](https://www.meetup.com/data-on-kubernetes-community/)
+[Website](/) | [Slack](@slack) | [LinkedIn](https://www.linkedin.com/company/data-on-kubernetes-community/) | [YouTube](https://www.youtube.com/channel/UCUnXJbHQ89R2uSfKsqQwGvQ) | [Twitter](https://twitter.com/DoKcommunity) | [Meetups](https://www.meetup.com/data-on-kubernetes-community/)
 
 **Operator SIG**
 
-#sig-operator on [Slack](https://dokcommunity.slack.com/) | Meets every other Tuesday
+#sig-operator on [Slack](@slack) | Meets every other Tuesday

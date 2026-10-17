@@ -50,7 +50,7 @@ sections:
   reverse: true
   buttons:
   - label: Join Slack
-    url: https://join.slack.com/t/dokcommunity/shared_invite/zt-2a0ahuhsh-MdZ4OpF4nr_s4kyOwTurVw
+    url: "@slack"
 - type: split
   content: |
     ## Contributor Program

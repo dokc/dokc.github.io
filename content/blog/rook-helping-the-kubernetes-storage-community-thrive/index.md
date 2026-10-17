@@ -29,10 +29,10 @@ This Town Hall featured an introduction to Rook and the open source community de
 
 [Let us know](/contribute/) if you’re interested in sharing a case study or use case with the community.
 
-**Data on Kubernetes Community**[Website](/) | [Slack](https://dokcommunity.slack.com/) | [LinkedIn](https://www.linkedin.com/company/data-on-kubernetes-community/) | [YouTube](https://www.youtube.com/channel/UCUnXJbHQ89R2uSfKsqQwGvQ) | [Twitter](https://twitter.com/DoKcommunity) | [Meetups](https://www.meetup.com/data-on-kubernetes-community/)
+**Data on Kubernetes Community**[Website](/) | [Slack](@slack) | [LinkedIn](https://www.linkedin.com/company/data-on-kubernetes-community/) | [YouTube](https://www.youtube.com/channel/UCUnXJbHQ89R2uSfKsqQwGvQ) | [Twitter](https://twitter.com/DoKcommunity) | [Meetups](https://www.meetup.com/data-on-kubernetes-community/)
 
 **Operator SIG**
-#sig-operator on [Slack](https://dokcommunity.slack.com/) | Meets every other Tuesday
+#sig-operator on [Slack](@slack) | Meets every other Tuesday
 
 **Transcript**Speaker 1 (00:00):
 Welcome to the September Town Hall for data on Kubernetes. For those of you who are joining us for the first time, d o k town halls are held monthly. They're opportunities where we invite end users to share best practices for running data workloads on Kubernetes. I want to kick off the call with an icebreaker. Sometimes we do these just to have a fun twist to the call. If you want to participate, just go ahead and chat your response here. It's pumpkin spice holiday time, and part of our team was just talking about yay or nay. Are we in favor of pumpkin spice or are we against it? Whether it's lattes, ice cream, candles, scents for your fabric. Just curious where folks are falling on this. I am indifferent to each his own, but I'm a personal nayyy on the pumpkin spice for coffee. Don't mind it on a scent. So I'm just curious if anybody wants to weigh in as just a fun little icebreaker before we get started.

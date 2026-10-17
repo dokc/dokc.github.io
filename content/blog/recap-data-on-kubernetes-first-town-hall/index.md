@@ -72,8 +72,8 @@ To watch the replay, click [here](https://youtu.be/3OeM43VE3KE).
 
 **Data on Kubernetes Community**
 
-[Website](/) | [Slack](https://dokcommunity.slack.com/) | [LinkedIn](https://www.linkedin.com/company/data-on-kubernetes-community/) | [YouTube](https://www.youtube.com/channel/UCUnXJbHQ89R2uSfKsqQwGvQ) | [Twitter](https://twitter.com/DoKcommunity) | [Meetups](https://www.meetup.com/data-on-kubernetes-community/)
+[Website](/) | [Slack](@slack) | [LinkedIn](https://www.linkedin.com/company/data-on-kubernetes-community/) | [YouTube](https://www.youtube.com/channel/UCUnXJbHQ89R2uSfKsqQwGvQ) | [Twitter](https://twitter.com/DoKcommunity) | [Meetups](https://www.meetup.com/data-on-kubernetes-community/)
 
 **Operator SIG**
 
-#sig-operator on [Slack](https://dokcommunity.slack.com/) | Meets every other Tuesday
+#sig-operator on [Slack](@slack) | Meets every other Tuesday

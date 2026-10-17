@@ -54,4 +54,4 @@ If you’re interested in learning more or joining the conversation, check out t
 
 - Copy the invite from the [**Shared DoKC Calendar**](https://calendar.google.com/calendar/u/2?cid=Y19mOTBjMjdhMzRmNDRiMzA3ODE1YjQyNjM2YmM0NjQ0ZTBlZWY2NjdhZWQ3NGE4YTY5NzcwM2U2MDg5NTg1MmE1QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20). Meetings are held every two weeks.
 - [**Meeting notes/agenda:**](https://docs.google.com/document/d/1Uyk5qQ4KhpI-YnLdG72V66dO9Hxv_kqTK_CrMHS9EFc/edit#heading=h.nxcx7r52ocev) review past sessions or submit a topic for discussion.
-- Join #sig-operator on [**DoK Slack**](https://dokcommunity.slack.com/join/shared_invite/zt-10v7uncvp-jNFwulsVWvUO0SKMDTjwAw#/shared-invite/email).
+- Join #sig-operator on [**DoK Slack**](@slack).

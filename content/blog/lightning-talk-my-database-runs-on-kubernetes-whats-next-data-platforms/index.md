@@ -35,7 +35,7 @@ Speaker 3: [05:56](https://www.rev.com/transcript-editor/shared/dOk39jJO7tM3WK8d
 #### Data on Kubernetes Community resources
 
 - Check out our [Meetup page](https://www.meetup.com/data-on-kubernetes-community/) to catch an upcoming event
-- Engage with us on [Slack](https://join.slack.com/t/dokcommunity/shared_invite/zt-2a0ahuhsh-MdZ4OpF4nr_s4kyOwTurVw)
+- Engage with us on [Slack](@slack)
 - Find [DoK resources](/dok-library/)
 - Read [DoK reports](/dok-reports/)
 - Become a [community sponsor](/join/)

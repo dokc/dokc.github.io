@@ -25,6 +25,6 @@ We invite you to submit:
 
 The previous edition of [DoK Day](https://www.youtube.com/watch?v=xK7KLaBLaQQ&t=443s), featured excellent talks such as [Deploying Open Cloud-Native Data Using K8ssandra](https://youtu.be/7WfN9P4mYTQ?list=PLHgdNuGxrJt0ZHXZlIxDi6DTdfJbXGFo1&t=37), [Why to Deploy Postgres on Kubernetes](https://youtu.be/DYh0A2dv8uM?list=PLHgdNuGxrJt0ZHXZlIxDi6DTdfJbXGFo1), and [How eCommerce giant Flipkart is doing data on Kubernetes at scale](https://youtu.be/D77FLwUN9Oo?list=PLHgdNuGxrJt0ZHXZlIxDi6DTdfJbXGFo1&t=15).
 
-Talks can be as short as 15 minutes; less work for the speaker, easier to digest for the audience! Submit your talk proposal [here](https://sessionize.com/dok-day/), and feel free to [reach out](https://join.slack.com/t/dokcommunity/shared_invite/zt-g3ui5r0g-jDKz5dhh2W1ayElqwKYYAg) to Bart if you have any questions.
+Talks can be as short as 15 minutes; less work for the speaker, easier to digest for the audience! Submit your talk proposal [here](https://sessionize.com/dok-day/), and feel free to [reach out](@slack) to Bart if you have any questions.
 
-Register to [DoK Day](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/colocated-events/#data-on-kubernetes-day) to learn about the future of data on Kubernetes and become a community member by [joining our Slack](https://join.slack.com/t/dokcommunity/shared_invite/zt-g3ui5r0g-jDKz5dhh2W1ayElqwKYYAg)!
+Register to [DoK Day](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/colocated-events/#data-on-kubernetes-day) to learn about the future of data on Kubernetes and become a community member by [joining our Slack](@slack)!

@@ -50,6 +50,8 @@ sections:
         url: "@slack"     # "@key" resolves to params.links in hugo.toml
 ```
 
+Use `@slack` for every Slack link, never the raw invite URL. Slack invites get regenerated; when that happens, update `params.links.slack` in `hugo.toml` and the whole site follows. For anything outside the site (slides, press releases, newsletters), share `https://dok.community/slack`, which redirects to the current invite (`content/slack/`).
+
 Available types: `hero`, `bento`, `text`, `split`, `tabs`, `banner`, `stats`, `people`, `sponsors`, `resources`, `posts`, `events`. See the comment at the top of each file in `layouts/partials/sections/` for its fields.
 
 Events use `eventStart`/`eventEnd` (`YYYY-MM-DD`) to decide between upcoming and past; the deploy workflow rebuilds daily so the lists stay current.
