@@ -10,7 +10,7 @@ sections:
 
     It is an independent, vendor-neutral space where people are encouraged to share knowledge and experiences to foster growth and innovation. Our open community is strongly biased towards openness – and open source.
 
-    [Code of Conduct](https://constantia.io/code-of-conduct/)
+    [Code of Conduct](@codeOfConduct)
 - type: split
   content: |
     ## **Monthly Town Hall Meetups**

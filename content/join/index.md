@@ -184,7 +184,7 @@ sections:
     2. Tell us if you want to stand for a steering seat
     3. Name one person for the Sponsor Council
 
-    Email [sponsorships@dok.community](@sponsor) to get started.
+    Email [dok@solanica.io](@sponsor) to get started.
   buttons:
   - label: Become a founding sponsor
     url: "@sponsor"

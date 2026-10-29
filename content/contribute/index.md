@@ -195,7 +195,7 @@ sections:
 - type: people
   label: Core team
   title: The core team runs DoK day to day
-  intro: Three seats are open. Interested? Write to [core@dok.community](@core).
+  intro: Three seats are open. Interested? Write to [dok@solanica.io](@core).
   people:
   - name: Kate Obiidykhata
     role: Community Cosmonaut
@@ -224,7 +224,7 @@ sections:
     - **Your work stays yours.** CC BY 4.0, you as author.
     - **Neutral by design.** No sponsor logos in patterns, Scorecard or report.
     - **All work counts.** Non-code contributions count as much as code.
-    - **Code of conduct.** The [CNCF code of conduct](https://github.com/cncf/foundation/blob/main/code-of-conduct.md), with a named contact.
+    - **Code of conduct.** The [CNCF code of conduct](@codeOfConduct), with a named contact.
 
 - type: split
   card: true
@@ -233,6 +233,6 @@ sections:
 
     - **Slack:** #contribute in the [DoK Slack](@slack)
     - **GitHub:** [github.com/dokc](@github)
-    - **Recognition:** [contributors@dok.community](mailto:contributors@dok.community)
-    - **Core team:** [core@dok.community](@core)
+    - **Recognition:** [dok@solanica.io](mailto:dok@solanica.io)
+    - **Core team:** [dok@solanica.io](@core)
 ---

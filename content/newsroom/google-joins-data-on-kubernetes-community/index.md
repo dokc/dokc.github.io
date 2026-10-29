@@ -38,4 +38,4 @@ Kubernetes was initially designed to run stateless workloads. However, today it 
 
 ## Contacts
 
-[press@dok.community](mailto:press@dok.community)
+[dok@solanica.io](mailto:dok@solanica.io)

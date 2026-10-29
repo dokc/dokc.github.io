@@ -142,7 +142,7 @@ sections:
   content: |
     ## Code of Conduct
 
-    The code of conduct applies to all DoKC spaces, including events: <https://constantia.io/code-of-conduct/>
+    The code of conduct applies to all DoKC spaces, including events: the [CNCF Code of Conduct](@codeOfConduct).
   width: wide
   tone: panel
 ---

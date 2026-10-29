@@ -57,7 +57,7 @@ summaryLength = 30
 [params]
   tagline = 'The people who run data on Kubernetes'
   description = 'The Data on Kubernetes Community is where users go to run data on Kubernetes (DoK). We facilitate the creation and sharing of best practices to help users advance in their DoK journey.'
-  copyrightHolder = 'Constantia LLC'
+  copyrightHolder = 'Data on Kubernetes Community'
   licenseName = 'CC BY 4.0'
   licenseURL = 'https://creativecommons.org/licenses/by/4.0/'
   ogImage = 'images/orbit-hero.png'
@@ -69,14 +69,15 @@ summaryLength = 30
     youtube = 'https://www.youtube.com/@DoKcommunity'
     github = 'https://github.com/dokc'
     getStarted = 'https://github.com/dokc/Get-Started'
-    sponsor = 'mailto:sponsorships@dok.community?subject=DoK%202027%20sponsorship'
-    core = 'mailto:core@dok.community'
+    codeOfConduct = 'https://github.com/cncf/foundation/blob/main/code-of-conduct.md'
+    sponsor = 'mailto:dok@solanica.io?subject=DoK%202027%20sponsorship'
+    core = 'mailto:dok@solanica.io'
     # Interim mailto links until the new forms exist; replace each with its form URL.
-    pilotsApply = 'mailto:contributors@dok.community?subject=DoK%20Pilots%20application'
-    nominate = 'mailto:contributors@dok.community?subject=Contributor%20nomination'
-    dockApply = 'mailto:contributors@dok.community?subject=Start%20a%20Dock'
-    eventSubmit = 'mailto:contributors@dok.community?subject=DoK%20meetup%20event'
-    speakerDatabase = 'mailto:contributors@dok.community?subject=DoK%20speaker%20database'
+    pilotsApply = 'mailto:dok@solanica.io?subject=DoK%20Pilots%20application'
+    nominate = 'mailto:dok@solanica.io?subject=Contributor%20nomination'
+    dockApply = 'mailto:dok@solanica.io?subject=Start%20a%20Dock'
+    eventSubmit = 'mailto:dok@solanica.io?subject=DoK%20meetup%20event'
+    speakerDatabase = 'mailto:dok@solanica.io?subject=DoK%20speaker%20database'
 
   [params.headerCTA]
     label = 'Join the Slack'

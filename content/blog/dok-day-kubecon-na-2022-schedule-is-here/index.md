@@ -42,7 +42,7 @@ In-person registration ($50 fee)
 - You can join us in person (150 seats available) in Detroit for a $50 fee (lunch included) by adding DoK Day to your schedule at the “Reg Options” stage of registration.
 - After 150 seats are filled, we will no longer offer in-person registration for DoK Day, so get in while you can!
 
-If you have questions, email events@dok.community.
+If you have questions, email dok@solanica.io.
 
 [**REGISTER HERE**](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/register/)
 
