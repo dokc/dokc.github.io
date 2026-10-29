@@ -21,4 +21,4 @@ According to past DoK reports, databases are the #1  data workloads that organiz
 
 ## Collaborate with DoK
 
-Do you work on an open source project in the DoK ecosystem? Let’s collaborate! In addition to our monthly town halls, we feature speakers from various open source projects in our DoK Talk series. Get involved in leading the conversation and join the DoK SIG on our Slack group. Send us a message at community@dok.community
+Do you work on an open source project in the DoK ecosystem? Let’s collaborate! In addition to our monthly town halls, we feature speakers from various open source projects in our DoK Talk series. Get involved in leading the conversation and join the DoK SIG on our Slack group. Send us a message at dok@solanica.io

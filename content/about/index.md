@@ -19,7 +19,15 @@ sections:
   content: |
     ## Who Runs DoKC?
 
-    DoKC is an independent user community managed by [Constantia.io](https://constantia.io/), a tech community company. We believe the more we share, the more we have.
+    DoKC is a community-led, vendor-neutral community run by the practitioners who run data on Kubernetes every day. In 2026, the community's assets and stewardship were transferred to the community itself, with Sergey Pronin acting as steward during the transition.
+
+    Sergey Pronin and Kate Obiidykhata lead the community as its interim core team until the first steering committee is seated at KubeCon EU 2027. The governance model is built so that no single company can steer DoK:
+
+    - **A five-seat steering committee:** two end users, two sponsors and one maintainer, with one seat per company.
+    - **A Sponsor Council** that advises but does not vote.
+    - **Rules money can't buy around:** no paid talk slots at DoK Day, no paid questions in the State of DoK report, and no paid Operator Scorecard results.
+
+    [Read the announcement](/blog/data-on-kubernetes-community-transitions-to-community-led-stewardship/)
   image: image3.jpg
   ratio: third
   reverse: true
@@ -47,11 +55,11 @@ sections:
   content: |
     ### General Inquiries:
 
-    [community@dok.community](mailto:community@dok.community)
+    [dok@solanica.io](mailto:dok@solanica.io)
 
     ### Sponsorships:
 
-    [sponsorships@dok.community](mailto:sponsorships@dok.community)
+    [dok@solanica.io](mailto:dok@solanica.io)
   card: true
   tone: panel
 aliases:

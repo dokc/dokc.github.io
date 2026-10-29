@@ -21,7 +21,7 @@ sections:
 
     This code of conduct applies both within community spaces and in public spaces when an individual is representing the community or its community.
 
-    Instances of abusive, harassing, or otherwise unacceptable behavior in the Data on Kubernetes Community may be reported to bart@dok.community.
+    Instances of abusive, harassing, or otherwise unacceptable behavior in the Data on Kubernetes Community may be reported to dok@solanica.io.
 
     This Code of Conduct is adapted from the Contributor Covenant ([http://contributor-covenant.org](http://contributor-covenant.org/)), version 1.2.0, available at <http://contributor-covenant.org/version/1/2/0/>
 ---

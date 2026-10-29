@@ -4,7 +4,7 @@ date: '2023-02-21T01:28:45Z'
 sections:
 - type: text
   content: |
-    The Data on Kubernetes Community (DoKC) is an independently run community hosted by Constantia.io. We exist to advance the conversation around data on Kubernetes. Our goal with the Community Collaborator program is to facilitate collaboration amongst DoK-related technology communities and end users who are running data-intensive workloads on Kubernetes.
+    The Data on Kubernetes Community (DoKC) is a community-led, vendor-neutral community. We exist to advance the conversation around data on Kubernetes. Our goal with the Community Collaborator program is to facilitate collaboration amongst DoK-related technology communities and end users who are running data-intensive workloads on Kubernetes.
 
     A DoKC Community Collaborator is defined as an Open Source Project backed by a nonprofit entity (e.g. The Apache Software Foundation or the Cloud Native Computing Foundation) that does not sell a product or service. Collaborators join free, alongside the [2027 sponsorship tiers](/join/).
 
@@ -18,7 +18,7 @@ sections:
 
     In lieu of a formal legal agreement, we only require written acceptance of the requirements by a community leader (e.g. member of the Technical Oversight Committee or Project Management Committee) to participate year-over-year.
 
-    Email [sponsorships@dok.community](mailto:sponsorships@dok.community "DoKC Community Collaborator") to join.
+    Email [dok@solanica.io](mailto:dok@solanica.io "DoKC Community Collaborator") to join.
 - type: sponsors
   emptyTitle: We're looking for founding sponsors.
   emptyText: Sponsors keep DoK Days, town halls and the annual report free for everyone. Founding sponsor places close 31 January 2027.

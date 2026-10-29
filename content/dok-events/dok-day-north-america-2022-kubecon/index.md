@@ -57,7 +57,7 @@ sections:
   intro: |
     ## Sponsors
 
-    To receive the prospectus, email events@dok.community.
+    To receive the prospectus, email dok@solanica.io.
   emptyTitle: We're looking for founding sponsors.
   emptyText: Sponsors keep DoK Days, town halls and the annual report free for everyone. Become one of the first.
   button:

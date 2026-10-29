@@ -66,7 +66,7 @@ LEGACY_REDIRECTS = {
 # Old internal links that were already redirects or dead on WordPress.
 LINK_REWRITES = {
     '/welcome/': '/community/',
-    '/mission-statement-code-of-conduct/': 'https://constantia.io/code-of-conduct/',
+    '/mission-statement-code-of-conduct/': 'https://github.com/cncf/foundation/blob/main/code-of-conduct.md',
     '/community-collaborator/': '/dokc-community-collaborator/',
     '/dok-day/': '/dok-events/',
 }

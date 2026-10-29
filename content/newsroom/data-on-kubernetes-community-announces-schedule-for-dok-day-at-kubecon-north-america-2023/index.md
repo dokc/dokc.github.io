@@ -34,4 +34,4 @@ The DoK Community was founded in June of 2020 to bring practitioners together to
 
 **About Data on Kubernetes Community (DoKC)**Kubernetes was initially designed to run stateless workloads. Today it is increasingly being used to run databases and other stateful workloads. The Data on Kubernetes Community was founded in June 2020 to bring practitioners together to solve the challenges of working with data on Kubernetes. An openly governed community, DoKC exists to assist in the emergence and development of techniques for the use of Kubernetes for data. [https://dok.community/](https://cts.businesswire.com/ct/CT?id=smartlink&url=https%3A%2F%2Fdok.community%2F&esheet=52492089&newsitemid=20210915005452&lan=en-US&anchor=https%3A%2F%2Fdok.community%2F&index=13&md5=fa3eca3ad3bdde56ee9faec829ed11d7)
 
-**Press Contact**press@dok.community
+**Press Contact**dok@solanica.io
