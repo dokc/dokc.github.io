@@ -1,6 +1,6 @@
 ---
 title: Data on Kubernetes Community Transitions to Community-Led Stewardship
-date: '2026-10-08T12:00:00Z'
+date: '2026-11-01T00:00:00Z'
 slug: data-on-kubernetes-community-transitions-to-community-led-stewardship
 author: DoK Core Team
 image: cover.jpg
