@@ -24,4 +24,4 @@ The event drove 2,800 guests and 37,000 views on our [Twitter](https://twitter.c
 
 [Timescale](https://www.timescale.com/) Cloud Engineer Oleksii Kliukin shared what they [learned from running a PostgreSQL managed service on Kubernetes on AWS](https://www.youtube.com/watch?v=k1Es-S85xRE) for over a year, the benefits and drawbacks.
 
-Last but not least, we [announced](/blog/announcing-the-dok-landscape/) the [Data on Kubernetes Landscape](/landscape/). A destination for end-users to research existing Data on Kubernetes products, solutions, and consultancies. We are already getting ready for DoK Day @ KubeCon NA 2022. Follow us on [Twitter](https://twitter.com/DoKcommunity) and subscribe to our [newsletter](/register-for-the-meetup/) to receive updates!
+Last but not least, we [announced](/blog/announcing-the-dok-landscape/) the [Data on Kubernetes Landscape](/landscape/). A destination for end-users to research existing Data on Kubernetes products, solutions, and consultancies. We are already getting ready for DoK Day @ KubeCon NA 2022. Follow us on [Twitter](https://twitter.com/DoKcommunity) and subscribe to our [newsletter](@newsletter) to receive updates!

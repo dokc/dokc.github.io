@@ -60,4 +60,28 @@ sections:
     url: "@pilotsApply"
   - label: Start contributing
     url: /contribute/
+
+- type: form
+  id: apply
+  form: pilots
+  label: DoK Pilots · 2027
+  title: Apply to be a Pilot
+  text: Tell us a little about yourself. The core team reviews every application and replies by email.
+  submit: Send application
+  success: |
+    **Thanks for applying!** We've received your application and will be in touch by email.
+
+    In the meantime, say hello in the [DoK Slack](@slack).
+  fields:
+  - name: name
+    label: Name
+    autocomplete: name
+  - name: email
+    label: Email
+    type: email
+    autocomplete: email
+  - name: message
+    label: Why do you want to become a Pilot?
+    type: textarea
+    hint: Share your contributions to DoK so far and how you'd like to represent the community.
 ---

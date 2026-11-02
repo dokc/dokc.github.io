@@ -6,7 +6,7 @@ sections:
   - type: hero
     label: "Data on Kubernetes Community"
     title: "The people who run data on Kubernetes."
-    text: "Bring your questions and your outages. 4,300 people in our Slack, and one of them has broken it before you."
+    text: "Bring your questions and your outages. 4,700 people in our Slack, and one of them has broken it before you."
     buttons:
       - label: "Join the Slack"
         url: "@slack"
@@ -70,7 +70,7 @@ sections:
     title: "Connect with your peers"
     intro: "Join the conversation to stay on top of trends and opportunities in the Data on Kubernetes community."
     items:
-      - value: "4,300+"
+      - value: "4,700+"
         label: "Slack members globally"
       - value: "600+"
         label: "DoK videos available"

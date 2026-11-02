@@ -17,6 +17,15 @@ newsletterTitle: Stay in the loop
 newsletterText: Event announcements, the annual DoK report and community news. No spam.
 newsletterPlaceholder: you@example.com
 newsletterButton: Subscribe
+newsletterSuccess: Thanks! You're on the list.
+
+close: Close
+optional: optional
+formSubmit: Send
+formChoose: Choose one…
+formSending: Sending…
+formSuccess: Thanks! We've received your message and will reply by email.
+formError: "Something went wrong. Please try again, or email dok@solanica.io."
 
 by: By
 publishedOn: Published

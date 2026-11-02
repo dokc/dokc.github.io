@@ -21,7 +21,7 @@ sections:
 
     Get on the DoKC Weekly list to receive updates on upcoming meetups, events, and more.
 
-    [Get DoKC Weekly](/register-for-the-meetup/)
+    [Get DoKC Weekly](@newsletter)
   ratio: third
   reverse: true
 aliases:

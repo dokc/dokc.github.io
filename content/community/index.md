@@ -70,7 +70,7 @@ sections:
   ratio: third
   reverse: true
 - type: split
-  content: Sign up for the [DoKC newsletter](/register-for-the-meetup/) that covers all things DoK. We also highly encourage you to join our Slack for real-time discussions about data on Kubernetes. It’s a great place to network, share news, and stay connected to DoKC.
+  content: Sign up for the [DoKC newsletter](@newsletter) that covers all things DoK. We also highly encourage you to join our Slack for real-time discussions about data on Kubernetes. It’s a great place to network, share news, and stay connected to DoKC.
   image: newsletter-icon.png
   reverse: true
   card: true

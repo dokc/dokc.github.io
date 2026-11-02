@@ -70,10 +70,12 @@ summaryLength = 30
     github = 'https://github.com/dokc'
     getStarted = 'https://github.com/dokc/Get-Started'
     codeOfConduct = 'https://github.com/cncf/foundation/blob/main/code-of-conduct.md'
-    sponsor = 'mailto:dok@solanica.io?subject=DoK%202027%20sponsorship'
+    sponsor = '/join/#sponsor'
+    # Footer signup form, present on every page.
+    newsletter = '#newsletter'
     core = 'mailto:dok@solanica.io'
+    pilotsApply = '/pilots/#apply'
     # Interim mailto links until the new forms exist; replace each with its form URL.
-    pilotsApply = 'mailto:dok@solanica.io?subject=DoK%20Pilots%20application'
     nominate = 'mailto:dok@solanica.io?subject=Contributor%20nomination'
     dockApply = 'mailto:dok@solanica.io?subject=Start%20a%20Dock'
     eventSubmit = 'mailto:dok@solanica.io?subject=DoK%20meetup%20event'
@@ -83,8 +85,11 @@ summaryLength = 30
     label = 'Join the Slack'
     url = '@slack'
 
-  [params.newsletter]
-    action = 'https://community.us1.list-manage.com/subscribe/post?u=69b500056de7204820b34995c&id=76703c9e82'
+  # formcarry endpoints: "form" sections (layouts/partials/sections/form.html) and the newsletter signup.
+  [params.forms]
+    pilots = 'https://formcarry.com/s/nGWbP2exLzo'
+    sponsor = 'https://formcarry.com/s/YlCWxwiLZyn'
+    newsletter = 'https://formcarry.com/s/Iuk63KeURAc'
 
   # Site-wide bar above the header. Leave text empty to hide it.
   [params.announcement]

@@ -1,0 +1,61 @@
+{{- /* Modal form posted to formcarry. Opens from any link to "#<id>" (e.g. "/pilots/#apply").
+  Fields: id, form (key in params.forms), label, title, text (md), submit, success (md),
+  fields[] {name, label, type (text|email|textarea|select), options[] (select), autocomplete, placeholder, hint, optional} */ -}}
+{{- $s := .s -}}
+{{- $action := index site.Params.forms $s.form | default "" -}}
+{{- if not $action }}{{ errorf "%s: form section: unknown form %q (see params.forms in hugo.toml)" .page.File.Path $s.form }}{{ end -}}
+{{- $id := $s.id | default "form" -}}
+<dialog id="{{ $id }}" data-form-dialog data-form-root data-error="{{ i18n "formError" }}" aria-labelledby="{{ $id }}-title" class="m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-xl overflow-y-auto rounded-card border border-line bg-panel p-0 text-paper backdrop:bg-deep-sea/85">
+  <div class="relative p-6 lg:p-8">
+    <form method="dialog" class="absolute top-4 right-4">
+      <button type="submit" class="flex size-10 items-center justify-center rounded-full text-2xl leading-none text-mist transition-colors hover:bg-deep-sea hover:text-paper" aria-label="{{ i18n "close" }}">&times;</button>
+    </form>
+    {{- with $s.label }}<p class="label mb-2">{{ . }}</p>{{ end }}
+    <h2 id="{{ $id }}-title" class="text-heading pr-10">{{ $s.title }}</h2>
+    {{- with $s.text }}<div class="prose mt-3 text-base">{{ partial "md.html" (dict "page" $.page "text" .) }}</div>{{ end }}
+
+    <form action="{{ $action }}" method="post" accept-charset="UTF-8" data-form class="mt-6 flex flex-col gap-5">
+      {{- range $i, $f := $s.fields }}
+      {{- $fid := printf "%s-%s" $id $f.name }}
+      {{- $type := $f.type | default "text" }}
+      {{- $input := "w-full rounded-2xl border border-line bg-deep-sea px-5 py-3 text-base text-paper placeholder:text-muted focus:border-teal focus:outline-none" }}
+      <div class="flex flex-col gap-2">
+        <label for="{{ $fid }}" class="text-base font-bold">{{ $f.label }}{{ if $f.optional }} <span class="font-normal text-muted">({{ i18n "optional" }})</span>{{ end }}</label>
+        {{- with $f.hint }}<p id="{{ $fid }}-hint" class="text-sm text-muted">{{ . }}</p>{{ end }}
+        {{- $attrs := slice (printf `id="%s" name="%s"` $fid (htmlEscape $f.name)) }}
+        {{- if not $f.optional }}{{ $attrs = $attrs | append "required" }}{{ end }}
+        {{- with $f.autocomplete }}{{ $attrs = $attrs | append (printf `autocomplete="%s"` (htmlEscape .)) }}{{ end }}
+        {{- with $f.placeholder }}{{ if ne $type "select" }}{{ $attrs = $attrs | append (printf `placeholder="%s"` (htmlEscape .)) }}{{ end }}{{ end }}
+        {{- with $f.hint }}{{ $attrs = $attrs | append (printf `aria-describedby="%s-hint"` $fid) }}{{ end }}
+        {{- $attrs = delimit $attrs " " | safeHTMLAttr }}
+        {{- if eq $type "textarea" }}
+        <textarea {{ $attrs }} rows="5" class="{{ $input }} resize-y"></textarea>
+        {{- else if eq $type "select" }}
+        <div class="relative">
+          <select {{ $attrs }} class="{{ $input }} appearance-none pr-12">
+            <option value="">{{ $f.placeholder | default (i18n "formChoose") }}</option>
+            {{- range $f.options }}
+            <option>{{ . }}</option>
+            {{- end }}
+          </select>
+          <svg class="pointer-events-none absolute top-1/2 right-5 size-4 -translate-y-1/2 text-mist" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>
+        </div>
+        {{- else }}
+        <input type="{{ $type }}" {{ $attrs }} class="{{ $input }}">
+        {{- end }}
+        <p data-field-error="{{ $f.name }}" class="hidden text-sm text-coral"></p>
+      </div>
+      {{- end }}
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" class="hidden">
+      <p data-form-status role="status" aria-live="polite" class="hidden text-base text-coral"></p>
+      <div>
+        <button type="submit" class="btn btn-primary" data-sending="{{ i18n "formSending" }}">{{ $s.submit | default (i18n "formSubmit") }}</button>
+      </div>
+    </form>
+
+    <div data-form-success hidden class="mt-6">
+      <div class="prose text-base">{{ partial "md.html" (dict "page" .page "text" ($s.success | default (i18n "formSuccess"))) }}</div>
+      <form method="dialog" class="mt-6"><button type="submit" class="btn btn-outline">{{ i18n "close" }}</button></form>
+    </div>
+  </div>
+</dialog>

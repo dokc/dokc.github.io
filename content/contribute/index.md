@@ -10,7 +10,7 @@ sections:
   content: |
     Founded in 2020, the Data on Kubernetes Community (DoK) brings together platform engineers, SREs, DBAs, data and ML infrastructure teams and operator maintainers to share how they run databases, streaming, analytics and AI data on Kubernetes in production.
 
-    4,300+ Slack members, 600+ talks and videos, two DoK Days a year at KubeCon EU and NA, and the annual [Data on Kubernetes report](/dok-reports/).
+    4,700+ Slack members, 600+ talks and videos, two DoK Days a year at KubeCon EU and NA, and the annual [Data on Kubernetes report](/dok-reports/).
   buttons:
   - label: Join the Slack
     url: "@slack"
