@@ -28,7 +28,7 @@ sections:
 
     The event will be 100% virtual with an in-person meetup for anyone who is attending the live event. Registration available [here](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/colocated-events/#data-on-kubernetes-day)!
 
-    Registration will be open soon. Sign up for the [DoKC Weekly newsletter](/register-for-the-meetup/) to receive updates.
+    Registration will be open soon. Sign up for the [DoKC Weekly newsletter](@newsletter) to receive updates.
   ratio: third
   reverse: true
 - type: split

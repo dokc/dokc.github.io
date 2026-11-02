@@ -59,7 +59,7 @@ sections:
   title: DoK is relaunching, not starting from zero
   intro: Plus the annual [Data on Kubernetes report](/dok-reports/) and the Operator SIG, working on operator standards.
   items:
-  - value: "4,300+"
+  - value: "4,700+"
     label: Slack members
   - value: "600+"
     label: talks and videos
@@ -184,10 +184,45 @@ sections:
     2. Tell us if you want to stand for a steering seat
     3. Name one person for the Sponsor Council
 
-    Email [dok@solanica.io](@sponsor) to get started.
+    [Send us your details](@sponsor) to get started.
   buttons:
   - label: Become a founding sponsor
     url: "@sponsor"
   - label: Open source? Join as a Collaborator
     url: /dokc-community-collaborator/
+
+- type: form
+  id: sponsor
+  form: sponsor
+  label: Sponsor DoK in 2027
+  title: Become a founding sponsor
+  text: Tell us who you are and which tier interests you. We'll reply by email with the prospectus and next steps.
+  submit: Send
+  success: |
+    **Thanks for your interest in sponsoring DoK!** We've received your details and will be in touch by email shortly.
+  fields:
+  - name: name
+    label: Name
+    autocomplete: name
+  - name: email
+    label: Work email
+    type: email
+    autocomplete: email
+  - name: company
+    label: Company
+    autocomplete: organization
+  - name: tier
+    label: Tier
+    type: select
+    options:
+    - Platinum
+    - Gold
+    - Silver
+    - Startup
+    - Not sure yet
+  - name: message
+    label: Anything else?
+    type: textarea
+    optional: true
+    hint: For example, whether you'd like to stand for a steering seat, or who should sit on the Sponsor Council.
 ---

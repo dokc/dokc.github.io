@@ -41,7 +41,7 @@ The event is sure to be a lot of fun, so register today, for free and come learn
 
 ### **Register**
 
-Registration will be open soon. The event will be 100% virtual. Sign up for the [DoKC Weekly newsletter](/register-for-the-meetup/) to receive updates.
+Registration will be open soon. The event will be 100% virtual. Sign up for the [DoKC Weekly newsletter](@newsletter) to receive updates.
 
 To [register](https://community.cncf.io/data-on-kubernetes/) for Data on Kubernetes Day, get in our [CNCF Meetup Group](https://community.cncf.io/data-on-kubernetes/) and subscribe to our [YouTube Channel!](https://www.youtube.com/channel/UCUnXJbHQ89R2uSfKsqQwGvQ)
 
