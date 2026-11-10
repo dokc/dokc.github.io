@@ -327,32 +327,32 @@ In the password rotation scenario, the BE startup script uses a MySQL client to 
 <td><strong>FE follower or leader pod disappears</strong></td>
 <td>The FE group loses a member, and losing the leader can interrupt metadata operations.</td>
 <td>Check whether the remaining voters retain a majority, whether they elect a new leader when needed, and whether the replacement FE rejoins.</td>
-<td>Crash-recovery. The FE can restart with its persisted state.</td>
+<td>Node: crash-recovery</td>
 </tr>
 <tr>
 <td><strong>A GKE worker is drained or abruptly replaced</strong></td>
 <td>A member may fail to recover after its pod is replaced, even when its persistent volume survives.</td>
 <td>Treat planned drain and abrupt loss as separate cases. Check whether the replacement can schedule in the disk’s zone, start with usable state, and rejoin the cluster.</td>
-<td>Crash-recovery if the member can reuse its persisted state. Treat a member that cannot recover from its local state as lost until it is rebuilt.</td>
+<td>Node: crash-stop (abrupt worker loss)<br>Node: crash-recovery (database member)</td>
 </tr>
 <tr>
 <td><p><strong>An FE is isolated from its voting peers</strong></p>
 <p><strong>(Network Partition)</strong></p></td>
 <td>An isolated leader could keep acting on stale leadership information, or clients could continue sending requests to an unreachable member.</td>
 <td>Check whether the majority can elect or retain a leader, whether the isolated side can commit new metadata changes, and whether the isolated member rejoins after connectivity returns.</td>
-<td>Network partition. Messages between the isolated FE and its voting peers cannot cross the partition while it is active.</td>
+<td>Network: partition (link omission)</td>
 </tr>
 <tr>
 <td><strong>A BE becomes unavailable</strong></td>
 <td>An affected tablet may have too few healthy replicas to satisfy its write quorum.</td>
 <td>Check whether loads can succeed with the remaining replicas and whether the cluster restores the intended replica count after recovery.</td>
-<td>Crash-recovery. The BE can restart after the interruption.</td>
+<td>Node: crash-recovery</td>
 </tr>
 <tr>
 <td><strong>BEs restart after a root password rotation</strong></td>
 <td>Running BEs may keep serving while a replacement fails to register because its <code>MYSQL_PWD</code> is missing or stale.</td>
 <td>Restart one BE first and check whether it can authenticate and register with the FE. Check whether tablet writes can still meet quorum if more BEs restart before the first recovers.</td>
-<td>Crash-recovery with a configuration fault. A BE can restart, but registration depends on a valid credential.</td>
+<td>Node: crash-recovery</td>
 </tr>
 </tbody>
 </table>
