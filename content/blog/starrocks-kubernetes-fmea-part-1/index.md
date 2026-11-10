@@ -99,7 +99,7 @@ These are assumptions about process behaviour, not Kubernetes workload types. [D
 
 `CrashLoopBackOff` indicates repeated container failures with delays between restart attempts. It does not represent crash-stop behaviour or guarantee that the database has failed safely. [Kubernetes pod lifecycle](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/)
 
-Similarly, competing leaders during a network partition do not automatically imply Byzantine behaviour. They may result from lost communication, stale leadership information, or an incorrect coordination mechanism.
+An FE that knowingly reports a metadata write as committed without obtaining a voting majority is an example of Byzantine behaviour. During a network partition, an isolated FE may still believe it is the leader because it cannot reach its peers. The partition test checks whether quorum safety holds under that loss of communication.
 
 ### Network and Timing Models
 
@@ -339,7 +339,7 @@ In the password rotation scenario, the BE startup script uses a MySQL client to 
 <td><p><strong>An FE is isolated from its voting peers</strong></p>
 <p><strong>(Network Partition)</strong></p></td>
 <td>An isolated leader could keep acting on stale leadership information, or clients could continue sending requests to an unreachable member.</td>
-<td>Check whether the majority can elect or retain a leader, whether the isolated side can commit new metadata changes, and whether the isolated member rejoins after connectivity returns.</td>
+<td>Check that the majority can elect or retain a leader. Verify that the isolated FE can neither commit a new metadata write nor report it as committed without a voting majority. Check that the isolated FE rejoins after connectivity returns.</td>
 <td>Network: partition (link omission)</td>
 </tr>
 <tr>
