@@ -1,13 +1,13 @@
 ---
-title: "Starrocks on Kubernetes FMEA - Part 1 Prerequisites"
+title: "StarRocks on Kubernetes FMEA - Part 1 Prerequisites"
 date: '2026-11-09'
 slug: starrocks-kubernetes-fmea-part-1
 author: Harsh Mishra
-description: "How we designed a Failure Modes and Effects Analysis for a Starrocks deployment on Google Kubernetes Engine."
+description: "How we designed a Failure Modes and Effects Analysis for a StarRocks deployment on Google Kubernetes Engine."
 image: featured.png
 tags:
 - Kubernetes
-- Starrocks
+- StarRocks
 - Database
 ---
 
@@ -15,13 +15,13 @@ tags:
 
 ## Introduction
 
-In May 2026, I assessed whether a customer could self-host Starrocks on Google Kubernetes Engine (GKE). I wanted to know which failures the deployment could tolerate and what recovering from them would take.
+In May 2026, I assessed whether a customer could self-host StarRocks on Google Kubernetes Engine (GKE). I wanted to know which failures the deployment could tolerate and what recovering from them would take.
 
 We used [*Failure Modes and Effects Analysis*](https://www.youtube.com/watch?v=Z9Kz4znKgcM) (FMEA) to identify how the deployment could fail, trace the effects, and decide what to test. This is Part 1 of the series that covers the deployment, its quorum requirements, and how we designed the assessment. In Part 2 we will see the tests in action and what we found.
 
 ## Audience and Key Takeaways
 
-This series is for SREs, Kubernetes administrators, and engineers evaluating a stateful system for production. You’ll learn what to understand about the system upfront, how to turn the guarantees your workload depends on into test cases, and how to scope the work to the time and resources you have. The series uses [Starrocks](https://starrocks.io), an open-source analytical data warehouse, as a case study and walks through the FMEA basics in enough depth to apply them to other stateful systems.
+This series is for SREs, Kubernetes administrators, and engineers evaluating a stateful system for production. You’ll learn what to understand about the system upfront, how to turn the guarantees your workload depends on into test cases, and how to scope the work to the time and resources you have. The series uses [StarRocks](https://starrocks.io), an open-source analytical data warehouse, as a case study and walks through the FMEA basics in enough depth to apply them to other stateful systems.
 
 ## What Is FMEA and Why Use It?
 
@@ -166,11 +166,11 @@ Consensus protocols combine this property with additional rules for leader elect
 
 **Note:** These examples assume crash failures and sufficient communication between surviving nodes. A majority alone does not guarantee correctness or availability under every type of failure.
 
-## Designing Our Starrocks Deployment
+## Designing Our StarRocks Deployment
 
-![Starrocks cluster architecture on GKE](starrocks-deployment.png)
+![StarRocks cluster architecture on GKE](starrocks-deployment.png)
 
-I deployed **Starrocks 3.5 in shared-nothing mode on GKE** using the Starrocks Kubernetes Operator, with three Frontend (FE) and three Backend (BE) nodes.
+I deployed **StarRocks 3.5 in shared-nothing mode on GKE** using the StarRocks Kubernetes Operator, with three Frontend (FE) and three Backend (BE) nodes.
 
 | Component         | Configuration                                      |
 |-------------------|----------------------------------------------------|
@@ -188,18 +188,18 @@ Zone separation in this test came from the one-worker-per-zone layout. A topolog
 
 A pod can reuse its zonal disk only on a worker in the disk's zone. If a drain or worker failure leaves no eligible worker in that zone, the replacement pod can stay `Pending` even when other zones have capacity. [GKE persistent volumes](https://docs.cloud.google.com/kubernetes-engine/docs/concepts/persistent-volumes)
 
-Starrocks separates responsibilities between two components:
+StarRocks separates responsibilities between two components:
 
 - **Frontends (FEs):** Manage metadata, client connections, and query planning.
 - **Backends (BEs):** Store data and execute queries.
 
 Both components use replication, but their quorum requirements serve different purposes.
 
-Reference: [Starrocks Architecture](https://docs.starrocks.io/docs/3.5/introduction/Architecture/)
+Reference: [StarRocks Architecture](https://docs.starrocks.io/docs/3.5/introduction/Architecture/)
 
 ### Frontends: Consensus for Metadata
 
-FEs maintain database metadata, including information about tables, partitions, and schemas. Starrocks uses **Berkeley DB Java Edition (BDB JE)** for metadata replication and leader election.
+FEs maintain database metadata, including information about tables, partitions, and schemas. StarRocks uses **Berkeley DB Java Edition (BDB JE)** for metadata replication and leader election.
 
 There are three FE roles:
 
@@ -220,19 +220,19 @@ This means:
 
 Observer FEs do not count toward the voting majority.
 
-Reference: [Starrocks Metadata Recovery](https://docs.starrocks.io/docs/administration/Meta_recovery/)
+Reference: [StarRocks Metadata Recovery](https://docs.starrocks.io/docs/administration/Meta_recovery/)
 
 ### Backends: Quorum for Tablet Writes
 
 Unlike FE metadata replication, Backend write quorum operates **at the tablet level.**
 
-![Tablet replicas and write quorum across Starrocks backends](starrocks-tablet-replication.png)
+![Tablet replicas and write quorum across StarRocks backends](starrocks-tablet-replication.png)
 
 #### What is a Tablet?
 
-A **tablet** is the basic unit of data storage, distribution, and replication in Starrocks.
+A **tablet** is the basic unit of data storage, distribution, and replication in StarRocks.
 
-Instead of storing an entire table on one machine, Starrocks divides its data into smaller units called tablets, organized through partitions and buckets.
+Instead of storing an entire table on one machine, StarRocks divides its data into smaller units called tablets, organized through partitions and buckets.
 
 Each tablet can have multiple replicas stored on different Backend nodes.
 
@@ -244,7 +244,7 @@ For example, with three BEs and `replication_num = 3`:
 | Tablet 2 | Replica | Replica | Replica |
 | Tablet 3 | Replica | Replica | Replica |
 
-This allows Starrocks to distribute query processing and maintain redundant copies of data.
+This allows StarRocks to distribute query processing and maintain redundant copies of data.
 
 #### Tablet Replication and Write Quorum
 
@@ -253,7 +253,7 @@ Two table properties determine replication and write acknowledgment requirements
 - **`replication_num`:** Number of replicas maintained per tablet.
 - **`write_quorum`:** Number of replicas required to acknowledge a write.
 
-Starrocks supports three write quorum policies:
+StarRocks supports three write quorum policies:
 
 | Policy     | Required acknowledgments (3 replicas) |
 |------------|---------------------------------------|
@@ -272,11 +272,11 @@ Therefore, **at least two replicas of each affected tablet must acknowledge a wr
 
 If one BE fails, the remaining two replicas can still satisfy the majority write quorum. If two replicas of a tablet become unavailable, writes to that tablet cannot meet the configured quorum.
 
-Reference: [Starrocks Replica Management](https://docs.starrocks.io/docs/administration/management/resource_management/Replica/)
+Reference: [StarRocks Replica Management](https://docs.starrocks.io/docs/administration/management/resource_management/Replica/)
 
 ### Zooming Out
 
-Our Starrocks deployment had two independent quorum requirements:
+Our StarRocks deployment had two independent quorum requirements:
 
 |   | FE metadata quorum | BE write quorum |
 |----|----|----|
@@ -293,7 +293,7 @@ This connects back to our three concepts: **Consensus establishes agreement, quo
 
 ## Designing the FMEA
 
-I started with the guarantees I expected from our Starrocks deployment on GKE. For each guarantee, I picked a failure that could put it under pressure and decided what evidence would count as a pass. That gave me three things to check in each scenario:
+I started with the guarantees I expected from our StarRocks deployment on GKE. For each guarantee, I picked a failure that could put it under pressure and decided what evidence would count as a pass. That gave me three things to check in each scenario:
 
 - **Safety.** Can an isolated FE commit a metadata change without a voting majority? Can a load be reported as successful when an affected tablet has too few replica acknowledgments?
 - **Availability.** Which operations can clients still perform while the fault is active? Can they submit new loads, or do they see errors and timeouts during the disruption?
@@ -303,9 +303,9 @@ I assessed the FE metadata quorum and the BE tablet write quorum separately. In 
 
 I grouped the scenarios by what could go wrong, what I expected to observe, and which failure assumptions each test used.
 
-We ran the experiment with Starrocks Operator v1.11.1, which managed the FE and BE StatefulSets through the `StarRocksCluster` custom resource. That version provided no way to configure PodDisruptionBudgets (PDBs) through the custom resource. For the planned-drain scenario, we checked whether the remaining FEs could maintain a voting majority and whether writes could still reach quorum for each affected tablet. [StarRocksCluster resource definition in v1.11.1](https://github.com/StarRocks/starrocks-kubernetes-operator/blob/v1.11.1/config/crd/bases/starrocks.com_starrocksclusters.yaml)
+We ran the experiment with StarRocks Operator v1.11.1, which managed the FE and BE StatefulSets through the `StarRocksCluster` custom resource. That version provided no way to configure PodDisruptionBudgets (PDBs) through the custom resource. For the planned-drain scenario, we checked whether the remaining FEs could maintain a voting majority and whether writes could still reach quorum for each affected tablet. [StarRocksCluster resource definition in v1.11.1](https://github.com/StarRocks/starrocks-kubernetes-operator/blob/v1.11.1/config/crd/bases/starrocks.com_starrocksclusters.yaml)
 
-In the password rotation scenario, the BE startup script uses a MySQL client to connect to the FE as the Starrocks `root` user and register the backend. In our deployment, we had to inject the current root password separately into the BE container as `MYSQL_PWD`, sourced from a Kubernetes Secret. Changing the password in Starrocks does not update that environment variable. A running BE may keep serving while a replacement with a missing or stale value fails to authenticate and register. [Starrocks Operator password rotation guide](https://github.com/StarRocks/starrocks-kubernetes-operator/blob/v1.11.4/doc/change_root_password_howto.md)
+In the password rotation scenario, the BE startup script uses a MySQL client to connect to the FE as the StarRocks `root` user and register the backend. In our deployment, we had to inject the current root password separately into the BE container as `MYSQL_PWD`, sourced from a Kubernetes Secret. Changing the password in StarRocks does not update that environment variable. A running BE may keep serving while a replacement with a missing or stale value fails to authenticate and register. [StarRocks Operator password rotation guide](https://github.com/StarRocks/starrocks-kubernetes-operator/blob/v1.11.4/doc/change_root_password_howto.md)
 
 <table>
 <colgroup>
@@ -357,7 +357,7 @@ In the password rotation scenario, the BE startup script uses a MySQL client to 
 </tbody>
 </table>
 
-For each scenario, I wanted evidence at three levels: what the client saw, what Starrocks reported about leadership and replica health, and what Kubernetes reported about pod lifecycle. A replacement pod could be running while its database member was still unable to register or serve traffic. A rejected load could also be the expected safety outcome when the required quorum was unavailable.
+For each scenario, I wanted evidence at three levels: what the client saw, what StarRocks reported about leadership and replica health, and what Kubernetes reported about pod lifecycle. A replacement pod could be running while its database member was still unable to register or serve traffic. A rejected load could also be the expected safety outcome when the required quorum was unavailable.
 
 I started with one disruption at a time so I could trace its effects. Then I paired changes that can occur together during routine operations, such as rotating credentials and later replacing a pod. That distinction shaped the FMEA because a deployment can look healthy immediately after a change and still fail the next time a member has to start from scratch.
 
