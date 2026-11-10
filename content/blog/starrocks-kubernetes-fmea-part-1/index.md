@@ -303,7 +303,7 @@ I assessed the FE metadata quorum and the BE tablet write quorum separately. In 
 
 I grouped the scenarios by what could go wrong, what I expected to observe, and which failure assumptions each test used.
 
-For planned drains, check the FE and BE [PodDisruptionBudgets](https://kubernetes.io/docs/concepts/workloads/pods/disruptions/) separately. A budget can limit how many pods the Eviction API removes during maintenance. An abrupt worker loss can still take out every pod on that worker.
+We ran the experiment with StarRocks Operator v1.11.1, which managed the FE and BE StatefulSets through the `StarRocksCluster` custom resource. That version provided no way to configure PodDisruptionBudgets (PDBs) through the custom resource. For the planned-drain scenario, we checked whether the remaining FEs could maintain a voting majority and whether writes could still reach quorum for each affected tablet. [StarRocksCluster resource definition in v1.11.1](https://github.com/StarRocks/starrocks-kubernetes-operator/blob/v1.11.1/config/crd/bases/starrocks.com_starrocksclusters.yaml)
 
 In the password rotation scenario, the BE startup script uses a MySQL client to connect to the FE as the StarRocks `root` user and register the backend. In our deployment, we had to inject the current root password separately into the BE container as `MYSQL_PWD`, sourced from a Kubernetes Secret. Changing the password in StarRocks does not update that environment variable. A running BE may keep serving while a replacement with a missing or stale value fails to authenticate and register. [StarRocks Operator password rotation guide](https://github.com/StarRocks/starrocks-kubernetes-operator/blob/v1.11.4/doc/change_root_password_howto.md)
 
