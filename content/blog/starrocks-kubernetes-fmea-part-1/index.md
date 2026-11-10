@@ -29,7 +29,7 @@ Failure Modes and Effects Analysis (FMEA) is a structured way to identify how a 
 
 We often evaluate databases with stress tests and benchmarks such as [YCSB](https://en.wikipedia.org/wiki/YCSB) or [TPC-C](https://www.tpc.org/tpcc/). These tell us how the system performs under load. Operational resilience raises a different set of questions. What happens if the leader disappears during a write? Can a restarted member rejoin? What does the client see when a partition leaves the cluster without quorum?
 
-FMEA helps us decide which failures to test. Chaos engineering uses controlled experiments on a running system to see how it responds to those failures.
+FMEA helps us decide which failures to test. It must not be confused with, [Chaos engineering](https://principlesofchaos.org/), which, uses controlled experiments on a running system to see how it responds to those failures.
 
 Testing every possible failure is rarely practical. I started with the guarantees our deployment depended on, then picked scenarios that could challenge each one. We ran those experiments directly because the scope was small. For a larger assessment, a framework like [Jepsen](https://jepsen.io/) can automate parts of the work.
 
@@ -166,11 +166,11 @@ Consensus protocols combine this property with additional rules for leader elect
 
 **Note:** These examples assume crash failures and sufficient communication between surviving nodes. A majority alone does not guarantee correctness or availability under every type of failure.
 
-## Designing Our StarRocks Deployment
+## Designing Our Starrocks Deployment
 
-![StarRocks cluster architecture on GKE](starrocks-deployment.png)
+![Starrocks cluster architecture on GKE](starrocks-deployment.png)
 
-I deployed **StarRocks 3.5 in shared-nothing mode on GKE** using the StarRocks Kubernetes Operator, with three Frontend (FE) and three Backend (BE) nodes.
+I deployed **Starrocks 3.5 in shared-nothing mode on GKE** using the Starrocks Kubernetes Operator, with three Frontend (FE) and three Backend (BE) nodes.
 
 | Component         | Configuration                                      |
 |-------------------|----------------------------------------------------|
@@ -188,18 +188,18 @@ Zone separation in this test came from the one-worker-per-zone layout. A topolog
 
 A pod can reuse its zonal disk only on a worker in the disk's zone. If a drain or worker failure leaves no eligible worker in that zone, the replacement pod can stay `Pending` even when other zones have capacity. [GKE persistent volumes](https://docs.cloud.google.com/kubernetes-engine/docs/concepts/persistent-volumes)
 
-StarRocks separates responsibilities between two components:
+Starrocks separates responsibilities between two components:
 
 - **Frontends (FEs):** Manage metadata, client connections, and query planning.
 - **Backends (BEs):** Store data and execute queries.
 
 Both components use replication, but their quorum requirements serve different purposes.
 
-Reference: [StarRocks Architecture](https://docs.starrocks.io/docs/3.5/introduction/Architecture/)
+Reference: [Starrocks Architecture](https://docs.starrocks.io/docs/3.5/introduction/Architecture/)
 
 ### Frontends: Consensus for Metadata
 
-FEs maintain database metadata, including information about tables, partitions, and schemas. StarRocks uses **Berkeley DB Java Edition (BDB JE)** for metadata replication and leader election.
+FEs maintain database metadata, including information about tables, partitions, and schemas. Starrocks uses **Berkeley DB Java Edition (BDB JE)** for metadata replication and leader election.
 
 There are three FE roles:
 
@@ -340,7 +340,7 @@ In the password rotation scenario, the BE startup script uses a MySQL client to 
 <p><strong>(Network Partition)</strong></p></td>
 <td>An isolated leader could keep acting on stale leadership information, or clients could continue sending requests to an unreachable member.</td>
 <td>Check that the majority can elect or retain a leader. Verify that the isolated FE can neither commit a new metadata write nor report it as committed without a voting majority. Check that the isolated FE rejoins after connectivity returns.</td>
-<td>Node: Byzantine Behaviour<br>Network: partition (link omission)</td>
+<td>Node: Byzantine Behaviour (minority FE starts accepting writes) <br>Network: partition (link omission)</td>
 </tr>
 <tr>
 <td><strong>A BE becomes unavailable</strong></td>
