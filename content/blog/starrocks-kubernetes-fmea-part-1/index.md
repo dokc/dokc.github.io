@@ -11,7 +11,7 @@ tags:
 - Database
 ---
 
-> This is a two-part series on performing FMEA to test production readiness of Starrocks on GKE.
+> This is a two-part series on performing FMEA to test production readiness of StarRocks on GKE.
 
 ## Introduction
 
