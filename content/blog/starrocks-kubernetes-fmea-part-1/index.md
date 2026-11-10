@@ -340,7 +340,7 @@ In the password rotation scenario, the BE startup script uses a MySQL client to 
 <p><strong>(Network Partition)</strong></p></td>
 <td>An isolated leader could keep acting on stale leadership information, or clients could continue sending requests to an unreachable member.</td>
 <td>Check that the majority can elect or retain a leader. Verify that the isolated FE can neither commit a new metadata write nor report it as committed without a voting majority. Check that the isolated FE rejoins after connectivity returns.</td>
-<td>Network: partition (link omission)</td>
+<td>Node: Byzantine Behaviour<br>Network: partition (link omission)</td>
 </tr>
 <tr>
 <td><strong>A BE becomes unavailable</strong></td>
