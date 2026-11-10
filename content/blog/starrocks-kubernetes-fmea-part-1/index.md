@@ -21,7 +21,7 @@ We used [*Failure Modes and Effects Analysis*](https://www.youtube.com/watch?v=Z
 
 ## Audience and Key Takeaways
 
-This series is for SREs, Kubernetes administrators, and engineers evaluating a stateful system for production. You’ll learn what to understand about the system upfront, how to turn the guarantees your workload depends on into test cases, and how to scope the work to the time and resources you have. It takes a case study of [Starrocks](https://starrocks.io) - a data warehouse, walks through the FMEA Basics for this system in enough depth.
+This series is for SREs, Kubernetes administrators, and engineers evaluating a stateful system for production. You’ll learn what to understand about the system upfront, how to turn the guarantees your workload depends on into test cases, and how to scope the work to the time and resources you have. The series uses [StarRocks](https://starrocks.io), an open-source analytical data warehouse, as a case study and walks through the FMEA basics in enough depth to apply them to other stateful systems.
 
 ## What Is FMEA and Why Use It?
 
