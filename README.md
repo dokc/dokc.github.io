@@ -26,6 +26,7 @@ docker compose up --build   # http://localhost:5003
 | `content/` | All page copy. Pages are Markdown with a `sections:` list in front matter |
 | `content/_index.md` | Home page sections |
 | `content/blog/`, `newsroom/`, `dok-events/`, `resources/`, `dok-reports/` | Posts, press releases, events, library items and reports (page bundles with their images) |
+| `content/authors/` | Author profile pages, linked from post bylines (see [Author pages](#author-pages)) |
 | `data/sponsors.yaml` | Sponsor tiers and sponsors (empty list shows a call for sponsors) |
 | `i18n/en.yaml` | Interface text (buttons, labels, empty states) |
 | `layouts/partials/sections/` | One template per section type |
@@ -57,6 +58,29 @@ Available types: `hero`, `bento`, `text`, `split`, `tabs`, `banner`, `stats`, `p
 A `form` section renders a hidden modal that posts to [formcarry](https://formcarry.com). Put the endpoint in `params.forms` in `hugo.toml` and reference it by key. Any link to `#<id>` opens the modal, including links from other pages (e.g. `/pilots/#apply`). See `content/pilots/index.md` for an example.
 
 Events use `eventStart`/`eventEnd` (`YYYY-MM-DD`) to decide between upcoming and past; the deploy workflow rebuilds daily so the lists stay current.
+
+## Author pages
+
+Blog and newsroom posts name their author in front matter (`author: Jane Doe`, or a list for several authors). If `content/authors/<slug>/index.md` exists, where the slug is the name lowercased with spaces and punctuation replaced by `-` (`Jane Doe` → `jane-doe`), the byline links to that page and the post gets schema.org author markup pointing to it. Without an author page, the byline stays plain text. The `/authors/` index appears once the first author page exists.
+
+```yaml
+# content/authors/jane-doe/index.md
+---
+title: "Jane Doe"                 # display name
+role: "Staff Engineer at Example" # shown under the name
+jobTitle: "Staff Engineer"        # optional, schema.org jobTitle
+bio: "One or two sentences. Markdown allowed."
+avatar: "avatar.jpg"              # square photo in the same folder
+github: "janedoe"                 # username
+linkedin: "https://www.linkedin.com/in/janedoe/"
+x: "https://x.com/janedoe"
+website: "https://janedoe.dev"
+# schemaType: "Organization"      # for team authors such as "DoK Core Team"
+---
+Optional longer bio in Markdown.
+```
+
+The author page lists all of that author's posts automatically.
 
 ## Checks
 

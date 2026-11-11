@@ -1,0 +1,25 @@
+{{ define "main" }}
+{{ partial "page-header.html" (dict "page" . "lead" (.Params.lead | default (i18n "authorsLead"))) }}
+<div class="container-dok py-14 lg:py-20">
+  <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    {{- range .RegularPages.ByTitle }}
+    {{- $avatar := partial "resolve-image.html" (dict "page" . "path" .Params.avatar) }}
+    {{- $count := len (partial "author-posts.html" .) }}
+    <li>
+      <a href="{{ .RelPermalink }}" class="card group flex h-full items-center gap-4">
+        {{- with $avatar }}
+        {{ partial "img.html" (dict "src" . "alt" "" "fill" "240x240" "width" 240 "sizes" "96px" "class" "h-20 w-20 shrink-0 rounded-full object-cover ring-2 ring-teal") }}
+        {{- else }}
+        <div class="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-deep-sea ring-2 ring-line" aria-hidden="true">{{ partial "mark.html" (dict "size" 36) }}</div>
+        {{- end }}
+        <div>
+          <h2 class="text-lg leading-snug font-extrabold text-paper group-hover:text-teal">{{ .Title }}</h2>
+          {{- with .Params.role }}<p class="text-base text-mist">{{ . }}</p>{{ end }}
+          {{- if $count }}<p class="label mt-2">{{ i18n "postCount" $count }}</p>{{ end }}
+        </div>
+      </a>
+    </li>
+    {{- end }}
+  </ul>
+</div>
+{{ end }}

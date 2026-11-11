@@ -10,7 +10,7 @@
           {{- with .Params.location }} · {{ . }}{{ end }}
         </p>
         <h1 class="text-title">{{ .Title }}</h1>
-        {{- with .Params.author }}<p class="mt-6 text-mist">{{ i18n "by" }} <span class="font-bold text-paper">{{ . }}</span></p>{{ end }}
+        {{- partial "author-byline.html" . }}
       </div>
     </div>
   </header>
