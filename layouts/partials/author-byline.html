@@ -1,0 +1,14 @@
+{{- /* "By …" line for blog/newsroom posts. Authors with a page in content/authors/ are linked; others stay plain text. Context: page */ -}}
+{{- with partial "authors.html" . }}
+<p class="mt-6 text-mist">{{ i18n "by" }}
+  {{- range $i, $a := . }}{{ if $i }},{{ end }}
+  {{- with $a.page }}
+  {{- $avatar := partial "resolve-image.html" (dict "page" . "path" .Params.avatar) }}
+  <a href="{{ .RelPermalink }}" rel="author" class="inline-flex items-center gap-2 align-middle font-bold text-paper underline decoration-teal decoration-1 underline-offset-4 hover:text-teal">
+    {{- with $avatar }}{{ partial "img.html" (dict "src" . "alt" "" "fill" "96x96" "width" 96 "class" "h-8 w-8 rounded-full object-cover ring-1 ring-teal") }}{{ end -}}
+    {{ .Title }}</a>
+  {{- else }} <span class="font-bold text-paper">{{ $a.name }}</span>
+  {{- end }}
+  {{- end }}
+</p>
+{{- end }}

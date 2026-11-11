@@ -1,5 +1,7 @@
 {{- $title := cond .IsHome (printf "%s | %s" site.Title site.Params.tagline) (printf "%s | %s" .Title site.Title) -}}
-{{- $description := .Description | default .Summary | default site.Params.description | plainify | htmlUnescape | truncate 180 -}}
+{{- $description := .Description -}}
+{{- if not $description }}{{ with .Params.bio }}{{ $description = . | markdownify }}{{ end }}{{ end -}}
+{{- $description = $description | default .Summary | default site.Params.description | plainify | htmlUnescape | truncate 180 -}}
 {{- $image := "" -}}
 {{- with .Params.image }}{{ with $.Resources.Get . }}{{ $image = . }}{{ end }}{{ end -}}
 {{- if not $image }}{{ $image = resources.Get site.Params.ogImage }}{{ end -}}
@@ -14,7 +16,7 @@
 <meta property="og:title" content="{{ cond .IsHome site.Title .Title }}">
 <meta property="og:description" content="{{ $description }}">
 <meta property="og:url" content="{{ .Permalink }}">
-<meta property="og:type" content="{{ cond .IsPage "article" "website" }}">
+<meta property="og:type" content="{{ cond .IsPage (cond (eq .Section "authors") "profile" "article") "website" }}">
 {{- with $image }}
 <meta property="og:image" content="{{ .Permalink }}">
 <meta property="og:image:width" content="{{ .Width }}">
@@ -39,5 +41,18 @@
 {{- end }}
 {{- if .IsHome }}
 <script type="application/ld+json">{{ dict "@context" "https://schema.org" "@type" "Organization" "name" site.Title "url" site.Home.Permalink "logo" (absURL "apple-touch-icon.png") "sameAs" (slice site.Params.links.github site.Params.links.youtube site.Params.links.meetup) | jsonify | safeJS }}</script>
+{{- end }}
+{{- if and .IsPage (in (slice "blog" "newsroom") .Section) }}
+{{- $authors := slice }}
+{{- range partial "authors.html" . }}
+  {{- if .page }}{{ $authors = $authors | append (partial "schema-author.html" (dict "page" .page)) }}{{ else }}{{ $authors = $authors | append (dict "@type" "Person" "name" .name) }}{{ end }}
+{{- end }}
+{{- $article := dict "@context" "https://schema.org" "@type" (cond (eq .Section "newsroom") "NewsArticle" "BlogPosting") "headline" .Title "description" $description "url" .Permalink "mainEntityOfPage" .Permalink "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00") "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00") "publisher" (dict "@type" "Organization" "name" site.Title "url" site.Home.Permalink "logo" (absURL "apple-touch-icon.png")) }}
+{{- with $authors }}{{ $article = merge $article (dict "author" .) }}{{ end }}
+{{- with $image }}{{ $article = merge $article (dict "image" .Permalink) }}{{ end }}
+<script type="application/ld+json">{{ $article | jsonify | safeJS }}</script>
+{{- end }}
+{{- if and .IsPage (eq .Section "authors") }}
+<script type="application/ld+json">{{ dict "@context" "https://schema.org" "@type" "ProfilePage" "url" .Permalink "mainEntity" (partial "schema-author.html" (dict "page" . "full" true)) | jsonify | safeJS }}</script>
 {{- end }}
 {{- partial "analytics.html" . }}

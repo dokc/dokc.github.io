@@ -1,0 +1,11 @@
+{{- /* Profile links for an author page (front matter: github username, linkedin/x/website URLs). Context: author page */ -}}
+{{- $links := slice -}}
+{{- with .Params.github }}{{ $links = $links | append (dict "url" (printf "https://github.com/%s" .) "label" (i18n "social_github")) }}{{ end -}}
+{{- range $k := slice "linkedin" "x" "website" }}{{ with index $.Params $k }}{{ $links = $links | append (dict "url" . "label" (i18n $k)) }}{{ end }}{{ end -}}
+{{- with $links }}
+<ul class="flex flex-wrap gap-x-5 gap-y-1">
+  {{- range . }}
+  <li><a href="{{ .url }}" class="label hover:text-paper" target="_blank" rel="me noopener">{{ .label }}</a></li>
+  {{- end }}
+</ul>
+{{- end }}

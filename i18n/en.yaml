@@ -37,6 +37,13 @@ newer: Newer
 older: Older
 pageOf: Page {{ .Current }} of {{ .Total }}
 
+author: Author
+authorsLead: The people writing for the Data on Kubernetes Community blog.
+postsBy: Posts by {{ .Name }}
+postCount:
+  one: "{{ .Count }} post"
+  other: "{{ .Count }} posts"
+
 upcomingEvents: Upcoming events
 pastEvents: Past events
 noUpcomingEvents: No upcoming events right now. Check back soon, or join the Slack to hear first.

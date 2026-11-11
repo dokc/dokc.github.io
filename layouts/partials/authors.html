@@ -1,0 +1,12 @@
+{{- /* Resolves a page's `author` front matter (a name or a list of names) to author pages.
+Returns a slice of dict "name" "page"; "page" is nil when content/authors/<slug>/ does not exist.
+The slug is the name lowercased with non-alphanumerics replaced by "-" ("Melissa Logan" -> melissa-logan). Context: page */ -}}
+{{- $out := slice -}}
+{{- with .Params.author -}}
+  {{- $names := cond (reflect.IsSlice .) . (slice .) -}}
+  {{- range $names -}}
+    {{- $slug := trim (. | lower | replaceRE "[^a-z0-9]+" "-") "-" -}}
+    {{- $out = $out | append (dict "name" . "page" (site.GetPage (printf "/authors/%s" $slug))) -}}
+  {{- end -}}
+{{- end -}}
+{{- return $out -}}

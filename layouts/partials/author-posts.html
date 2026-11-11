@@ -1,0 +1,10 @@
+{{- /* Blog and newsroom posts whose `author` resolves to the given author page, newest first. Context: author page */ -}}
+{{- $self := .RelPermalink -}}
+{{- $posts := slice -}}
+{{- range where site.RegularPages "Section" "in" (slice "blog" "newsroom") -}}
+  {{- $post := . -}}
+  {{- range partial "authors.html" . -}}
+    {{- if and .page (eq .page.RelPermalink $self) }}{{ $posts = $posts | append $post }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+{{- return sort ($posts | uniq) "Date" "desc" -}}

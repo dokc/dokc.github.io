@@ -1,0 +1,14 @@
+{{- /* schema.org Person (or Organization, via `schemaType`) for an author page. Args: dict "page" (author page) "full" (include bio) */ -}}
+{{- $p := .page -}}
+{{- $type := $p.Params.schemaType | default "Person" -}}
+{{- $e := dict "@type" $type "@id" (printf "%s#author" $p.Permalink) "name" $p.Title "url" $p.Permalink -}}
+{{- with partial "resolve-image.html" (dict "page" $p "path" $p.Params.avatar) -}}
+  {{- $e = merge $e (dict (cond (eq $type "Person") "image" "logo") .Permalink) -}}
+{{- end -}}
+{{- with $p.Params.jobTitle }}{{ $e = merge $e (dict "jobTitle" .) }}{{ end -}}
+{{- if .full }}{{ with $p.Params.bio }}{{ $e = merge $e (dict "description" (. | markdownify | plainify | htmlUnescape)) }}{{ end }}{{ end -}}
+{{- $sameAs := slice -}}
+{{- with $p.Params.github }}{{ $sameAs = $sameAs | append (printf "https://github.com/%s" .) }}{{ end -}}
+{{- range slice "linkedin" "x" "website" }}{{ with index $p.Params . }}{{ $sameAs = $sameAs | append . }}{{ end }}{{ end -}}
+{{- with $sameAs }}{{ $e = merge $e (dict "sameAs" .) }}{{ end -}}
+{{- return $e -}}

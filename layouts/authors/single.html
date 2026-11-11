@@ -1,0 +1,37 @@
+{{ define "main" }}
+{{- $avatar := partial "resolve-image.html" (dict "page" . "path" .Params.avatar) }}
+{{- $posts := partial "author-posts.html" . }}
+<section class="border-b border-line">
+  <div class="container-dok py-14 lg:py-20">
+    <div class="flex flex-col gap-8 sm:flex-row sm:items-center">
+      {{- with $avatar }}
+      {{ partial "img.html" (dict "src" . "alt" $.Title "fill" "320x320" "width" 320 "class" "h-32 w-32 shrink-0 rounded-full object-cover ring-2 ring-teal lg:h-40 lg:w-40" "eager" true) }}
+      {{- else }}
+      <div class="flex h-32 w-32 shrink-0 items-center justify-center rounded-full bg-deep-sea ring-2 ring-line lg:h-40 lg:w-40" aria-hidden="true">{{ partial "mark.html" (dict "size" 56) }}</div>
+      {{- end }}
+      <div class="flex flex-col gap-4">
+        <p class="label">{{ i18n "author" }}</p>
+        <h1 class="text-title">{{ .Title }}</h1>
+        {{- with .Params.role }}<p class="text-lead">{{ . }}</p>{{ end }}
+        {{ partial "author-links.html" . }}
+      </div>
+    </div>
+    {{- with .Params.bio }}
+    <p class="text-lead mt-10 max-w-3xl">{{ . | markdownify }}</p>
+    {{- end }}
+    {{- with .Content }}
+    <div class="prose mt-10 max-w-3xl">{{ . }}</div>
+    {{- end }}
+  </div>
+</section>
+{{- with $posts }}
+<section class="py-14 lg:py-20">
+  <div class="container-dok">
+    <h2 class="text-heading mb-10">{{ i18n "postsBy" (dict "Name" $.Title) }}</h2>
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {{- range . }}{{ partial "cards/post.html" . }}{{ end }}
+    </div>
+  </div>
+</section>
+{{- end }}
+{{ end }}
