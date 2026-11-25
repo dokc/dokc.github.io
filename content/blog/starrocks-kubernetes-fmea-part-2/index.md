@@ -108,7 +108,6 @@ We use the invariants above to define each test. Before each fault, we verify th
 | Credential rotation | CRED-1 | Start ESO with a one-hour refresh interval. Rotate the database and provider passwords. Confirm the target Secret is stale, then restart one BE. Record the failure before applying the fix. | Credential synchronization delay exposed by BE Crash-Recovery. | The replacement BE authenticates and returns to service without a forced sync or another restart. All affected tablets regain three healthy replicas. | The replacement BE reads the old password and cannot authenticate or return to service. This is the expected failure of the rotation workflow. |
 | Planned maintenance | SURGE-1 | Run continuous write probes during an actual GKE surge upgrade. Compare worker, pod, and volume identities, then check acknowledged rows and tablet health. | Planned worker replacement and FE/BE Crash-Recovery. | All acknowledged inserts remain readable. All three FEs and BEs recover, each tablet regains three healthy replicas, and the six database volume bindings remain intact. | An acknowledged insert disappears, a member cannot rejoin, a database volume binding is lost, or tablet redundancy fails to recover. |
 
-For CRED-1, recovery follows the failed test. We force ESO to sync, verify the target Secret, and replace the affected BE container. We then check registration, acknowledged rows, and three healthy replicas per affected tablet. Successful recovery completes the remediation. The original test verdict remains **FAIL**.
 
 The forced pod exits exercise database process Crash-Recovery. The surge test uses the separately recorded GKE worker upgrade. For any client timeout, we check the operation after recovery before we assign its outcome.
 
@@ -280,7 +279,7 @@ Storage: same PVC claims; replacement pod has a new UID.
 Status: PASS
 ```
 
-The tablet checks recorded the following states.
+The tablet checks recorded the following states. This can be manually verified by running `ADMIN SHOW REPLICA STATUS`
 
 | Check | Healthy replicas | DEAD replicas |
 | --- | --- | --- |
@@ -336,7 +335,7 @@ Write with two BEs: acknowledged.
 
 ### Identified Risks
 
-A shorter polling interval still leaves a stale Secret window. An ESO outage can extend it. Several failed BE restarts can remove write quorum.
+A shorter polling interval still leaves a stale Secret window, and is not a permanent fix. In a scenario where an ESO outage occurs during this interval, can also reproduce the same failure mode. Several failed BE restarts can remove write quorum. It is advised to keep backups handy and force sync ESO `ExternalSecret` as shown below.
 
 ### Fix
 
@@ -355,13 +354,6 @@ kubectl -n starrocks delete pod starrocks-fmea-be-0 --wait=false
 ```
 
 The runner checks the acknowledged row and all tablet replicas before restoring the original credential.
-
-```text
-Fix: forced ESO sync; target Secret matches the rotated password.
-Recovery: BE registered, acknowledged row present, all 12 replicas OK.
-Status: FAIL — stale credentials prevented BE restart.
-Fix: verified; original credential and baseline restored.
-```
 
 ## Conclusion
 
