@@ -98,7 +98,7 @@ summaryLength = 30
 
   # GA4 measurement ID. Loaded only in production builds; leave empty to disable.
   [params.analytics]
-    ga4 = ''
+    ga4 = 'G-WQVL9QXFDR'
 
 [[menus.main]]
   identifier = 'learn'
